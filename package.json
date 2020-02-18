@@ -1,14 +1,31 @@
 {
-  "name": "tailwindcss-plugin-rhythm",
-  "version": "0.0.1",
-  "description": "tailwindcss typography and rhythm plugin",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "styled-rhythm",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   },
+  "version": "0.0.1",
+  "description": "tailwindcss typography and rhythm utilities",
   "keywords": [
-    "tailwindcss"
+    "tailwindcss",
+    "typography",
+    "baseline",
+    "grid",
+    "rhythm"
   ],
   "author": "tol.is",
+  "main": "index.js",
+  "scripts": {
+    "tdd": "oao run-script tdd --parallel --relative-time",
+    "start": "oao run-script start --parallel --relative-time",
+    "build": "oao run-script build --tree --relative-time",
+    "outdated": "oao outdated",
+    "status": "oao status"
+  },
+  "devDependencies": {
+    "oao": "^1.8.0"
+  },
   "license": "MIT"
 }
