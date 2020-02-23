@@ -143,7 +143,7 @@ const $jAN8$var$createTextStyles = ({
     };
   }));
   const leading = Array.from(new Array(11), (v, i) => i);
-  const sizeStyles = $jAN8$var$flattenDeep(fontConfig.map(font => options.typeScale.map((size, sizeIdx) => {
+  const sizeStyles = $jAN8$var$flattenDeep(fontConfig.map(font => options.type.map((size, sizeIdx) => {
     return leading.map(lead => {
       return {
         [`.${font.fontClassName}`]: {
@@ -356,12 +356,207 @@ const $CDWS$var$tailwindPlugin = (options = {}) => {
 };
 
 $CDWS$exports = $CDWS$var$tailwindPlugin;
-// ASSET: tailwind-compositor.js
-var $cLYv$exports = {}; // const { scaleToRem } = require('./utils/scale-to-rem');
+var $NJCi$export$is = {
+  truthy: n => n !== undefined && n !== null && n !== false,
+  exists: n => n !== undefined && n !== null,
+  undefined: n => n === undefined,
+  array: n => Array.isArray(n),
+  num: n => typeof n === 'number' && !Number.isNaN(n),
+  func: f => typeof f === 'function',
+  object: n => typeof n === 'object' && n !== null,
+  emptyObject: obj => Object.entries(obj).length === 0 && obj.constructor === Object,
+  string: str => Object.prototype.toString.call(str) === '[object String]'
+};
 
-const $cLYv$var$compositor = styledTheme => tailwindConfig => {
-  const styledConfig = {};
-  return styledConfig;
+var $VTuF$export$pxToRem = root => px => px / root;
+
+function $DVVW$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $DVVW$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $DVVW$var$ownKeys(Object(source), true).forEach(function (key) {
+        $DVVW$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $DVVW$var$ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $DVVW$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+var $DVVW$export$baselineScaleToRem = baseline => root => scale => {
+  const result = Object.keys(scale).reduce((res, key) => {
+    const toRootEm = $VTuF$export$pxToRem(root);
+    const value = scale[key];
+    return $DVVW$var$_objectSpread({
+      [key]: $NJCi$export$is.num(value) ? `${toRootEm(value * baseline)}rem` : value
+    }, res);
+  }, {});
+  return result;
+};
+
+// ASSET: tailwind-compositor.js
+var $cLYv$exports = {};
+
+function $cLYv$var$ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function $cLYv$var$_objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      $cLYv$var$ownKeys(Object(source), true).forEach(function (key) {
+        $cLYv$var$_defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      $cLYv$var$ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function $cLYv$var$_defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function $cLYv$var$_objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = $cLYv$var$_objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function $cLYv$var$_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+const $cLYv$var$compositor = tailwindConfig => rhythmConfig => {
+  // some config values
+  const {
+    theme = {},
+    plugins = [],
+    extend = {}
+  } = tailwindConfig,
+        tailwindRest = $cLYv$var$_objectWithoutProperties(tailwindConfig, ["theme", "plugins", "extend"]);
+  const {
+    root,
+    baseline,
+    rhythm
+  } = rhythmConfig; // override spacing scale
+  // - rhythm is described in baseline units
+  // - convert rhythm scale to rem
+
+  const spacingScale = $DVVW$export$baselineScaleToRem(baseline)(root)(rhythm); // min max height
+
+  const {
+    height = {},
+    minHeight = {},
+    maxHeight = {}
+  } = extend,
+        tailwindExtend = $cLYv$var$_objectWithoutProperties(extend, ["height", "minHeight", "maxHeight"]); // spread spacing to tailwind theme
+
+  const tailwindTheme = $cLYv$var$_objectSpread({}, theme, {
+    spacing: spacingScale,
+    height,
+    extend: $cLYv$var$_objectSpread({}, tailwindExtend, {
+      height: $cLYv$var$_objectSpread({}, height, {}, spacingScale),
+      minHeight: $cLYv$var$_objectSpread({}, minHeight, {}, spacingScale),
+      maxHeight: $cLYv$var$_objectSpread({}, maxHeight, {}, spacingScale)
+    })
+  }); // spread plugins to tailwind plugins config
+
+  const tailwindPlugins = [...plugins, $CDWS$exports(rhythmConfig)]; // return tailwind config object
+
+  return $cLYv$var$_objectSpread({
+    theme: tailwindTheme,
+    plugins: tailwindPlugins
+  }, tailwindRest);
 };
 
 $cLYv$exports = $cLYv$var$compositor;

@@ -1,0 +1,21 @@
+exports.OCTAVE = 2;
+exports.DOUBLE_OCTAVE = 4;
+
+exports.GOLDEN_RATIO = 1.618034;
+exports.PHI = 1.618034;
+
+exports.PERFECT_FIFTH = 1.5;
+exports.PERFECT_FOURTH = 1.333333333;
+exports.AUGMENTED_FOURTH = 1.41421;
+
+exports.MAJOR_ELEVENTH = 2.666666667;
+exports.MAJOR_SECOND = 1.125;
+exports.MAJOR_SEVENTH = 1.875;
+exports.MAJOR_SIXTH = 1.666666667;
+exports.MAJOR_TENTH = 2.5;
+exports.MAJOR_THIRD = 1.25;
+exports.MAJOR_TWELFTH = 3;
+
+exports.MINOR_SECOND = 1.066666667;
+exports.MINOR_SEVENTH = 1.777777778;
+exports.MINOR_THIRD = 1.2;
