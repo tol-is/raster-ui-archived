@@ -40,7 +40,7 @@ const createRhythmStyles = ({ theme, options, e, addUtilities }) => {
 		},
 	};
 
-	addUtilities(rhythmStyles, [options.responsive ? 'responsive' : null]);
+	addUtilities(rhythmStyles, ['responsive']);
 	addUtilities(baselineBgStyles, []);
 };
 

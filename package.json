@@ -19,22 +19,18 @@
 	"main": "index.js",
 	"scripts": {
 		"postinstall": "lerna bootstrap",
-		"start": "npm-run-all --parallel tailwind:plugin tailwind:example",
+		"start": "npm-run-all --parallel text-styles tailwind:plugin tailwind:example",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"tailwind:plugin": "lerna exec --scope @styled-rhythm/tailwindcss -- yarn start",
+		"text-styles": "lerna exec --scope @styled-rhythm/text-styles -- yarn start",
 		"tailwind:example": "lerna exec --scope @styled-rhythm/tailwindcss-example -- yarn start",
 		"theme:plex": "lerna exec --scope @styled-rhythm/theme-plex -- yarn start"
 	},
 	"devDependencies": {
-		"@testing-library/cypress": "^5.0.1",
-		"@testing-library/jest-dom": "^4.1.0",
-		"@testing-library/react": "^9.1.4",
 		"jest": "^24.9.0",
 		"jshint": "^2.10.2",
 		"lerna": "^3.20.2",
-		"npm-run-all": "^4.1.5",
-		"prun": "^1.0.1",
-		"react-test-renderer": "^16.9.0"
+		"npm-run-all": "^4.1.5"
 	},
 	"license": "MIT"
 }

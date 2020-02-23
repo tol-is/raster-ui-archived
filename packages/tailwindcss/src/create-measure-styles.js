@@ -19,7 +19,7 @@ const createMeasureStyles = ({ theme, options, e, addUtilities }) => {
 		};
 	});
 
-	addUtilities(measureStyles, [options.responsive ? 'responsive' : null]);
+	addUtilities(measureStyles, ['responsive']);
 };
 
 module.exports = createMeasureStyles;

@@ -1,5 +1,5 @@
 const tailwindcss = require('tailwindcss');
-const styledRhythm = require('@styled-rhythm/tailwindcss');
+const { themeCompositor } = require('@styled-rhythm/tailwindcss');
 const themePlex = require('@styled-rhythm/theme-plex');
 
 const baseTailwindConfig = {
@@ -28,7 +28,7 @@ const baseTailwindConfig = {
 	},
 };
 
-const tailwindConfig = styledRhythm(baseTailwindConfig)(themePlex);
+const tailwindConfig = themeCompositor(baseTailwindConfig)(themePlex);
 
 module.exports = {
 	plugins: [tailwindcss(tailwindConfig)],

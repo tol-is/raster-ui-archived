@@ -1,5 +1,5 @@
 {
-	"name": "@styled-rhythm/tailwindcss",
+	"name": "@styled-rhythm/text-styles",
 	"version": "0.0.1",
 	"author": "Apostolos Christodoulou <me@tol.is>",
 	"license": "MIT",
@@ -9,12 +9,8 @@
 		"start": "node ../../scripts/parcel-start.js",
 		"build": "node ../../scripts/parcel-build.js"
 	},
-	"dependencies": {
-		"@styled-rhythm/text-styles": "^0.0.1"
-	},
 	"devDependencies": {
 		"parcel": "^1.12.4",
-		"parcel-bundler": "^1.12.4",
-		"lodash.flattendeep": "^4.4.0"
+		"parcel-bundler": "^1.12.4"
 	}
 }

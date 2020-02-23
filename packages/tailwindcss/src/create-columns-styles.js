@@ -70,10 +70,10 @@ const createGridStyles = ({ theme, options, e, addUtilities }) => {
 		};
 	});
 
-	addUtilities(gridStyles, [options.responsive ? 'responsive' : null]);
-	addUtilities(gridColumnStyles, [options.responsive ? 'responsive' : null]);
-	addUtilities(gridRowStyles, [options.responsive ? 'responsive' : null]);
-	addUtilities(gridGapStyles, [options.responsive ? 'responsive' : null]);
+	addUtilities(gridStyles, ['responsive']);
+	addUtilities(gridColumnStyles, ['responsive']);
+	addUtilities(gridRowStyles, ['responsive']);
+	addUtilities(gridGapStyles, ['responsive']);
 };
 
 module.exports = createGridStyles;

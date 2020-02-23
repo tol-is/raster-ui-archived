@@ -1,6 +1,5 @@
 var flattenDeep = require('lodash.flattendeep');
-
-const styleBaselineRel = require('./style-baseline-rel');
+const { styleBaselineRel } = require('@styled-rhythm/text-styles');
 
 /**
  *
@@ -9,7 +8,7 @@ const styleBaselineRel = require('./style-baseline-rel');
 const createTextStyles = ({ theme, options, e, addUtilities }) => {
 	const fontConfig = Object.keys(options.fonts).reduce((res, curFamily) => {
 		const fonts = options.fonts[curFamily];
-		fonts.forEach((font) => {
+		fonts.forEach(font => {
 			if (font.variable) {
 				res.push({
 					fontClassName: `${curFamily}-${font.key}}`,
@@ -26,11 +25,11 @@ const createTextStyles = ({ theme, options, e, addUtilities }) => {
 	}, []);
 
 	const familyStyles = flattenDeep(
-		fontConfig.map((font) => {
+		fontConfig.map(font => {
 			return {
 				[`.${e(font.fontClassName)}`]: {
 					display: 'block',
-					fontFamily: `"${font.familyName}", ${font.fallbackFamily}`,
+					fontFamily: `"${font.familyName}", ${font.familyFallback}`,
 					fontWeight: font.weight,
 					fontStyle: font.italic ? 'italic' : 'normal',
 				},
@@ -41,9 +40,9 @@ const createTextStyles = ({ theme, options, e, addUtilities }) => {
 	const leading = Array.from(new Array(11), (v, i) => i);
 
 	const sizeStyles = flattenDeep(
-		fontConfig.map((font) =>
+		fontConfig.map(font =>
 			options.type.map((size, sizeIdx) => {
-				return leading.map((lead) => {
+				return leading.map(lead => {
 					return {
 						[`.${font.fontClassName}`]: {
 							[`&.${e(`type-${sizeIdx}/${lead}`)}`]: {
