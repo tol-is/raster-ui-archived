@@ -1,19 +1,19 @@
 {
-  "name": "@styled-rhythm/tailwindcss",
-  "version": "0.0.1",
-  "author": "Apostolos Christodoulou <me@tol.is>",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "scripts": {
-    "tdd": "jest --watchAll --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
-    "start": "node ../../scripts/parcel-start.js",
-    "build": "node ../../scripts/parcel-build.js"
-  },
-  "devDependencies": {
-    "parcel": "^1.12.4",
-    "parcel-bundler": "^1.12.4",
-    "lodash.flattendeep": "^4.4.0",
-    "jest": "^24.9.0",
-    "jest-matcher-css": "^1.1.0"
-  }
+	"name": "@styled-rhythm/tailwindcss",
+	"version": "0.0.1",
+	"author": "Apostolos Christodoulou <me@tol.is>",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"scripts": {
+		"tdd": "jest --watchAll --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
+		"start": "node ../../scripts/parcel-start.js",
+		"build": "node ../../scripts/parcel-build.js"
+	},
+	"devDependencies": {
+		"parcel": "^1.12.4",
+		"parcel-bundler": "^1.12.4",
+		"lodash.flattendeep": "^4.4.0",
+		"jest": "^24.9.0",
+		"jest-matcher-css": "^1.1.0"
+	}
 }
