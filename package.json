@@ -19,11 +19,13 @@
 	"main": "index.js",
 	"scripts": {
 		"postinstall": "lerna bootstrap",
-		"start": "npm-run-all --parallel text-styles tailwind:plugin tailwind:example",
+		"lern": "lerna run  watch --stream",
+		"start": "npm-run-all --parallel text-styles tailwind:plugin example:tlwd docs",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
+		"docs": "lerna exec --scope @styled-rhythm/docs -- yarn start",
 		"tailwind:plugin": "lerna exec --scope @styled-rhythm/tailwindcss -- yarn start",
 		"text-styles": "lerna exec --scope @styled-rhythm/text-styles -- yarn start",
-		"tailwind:example": "lerna exec --scope @styled-rhythm/tailwindcss-example -- yarn start",
+		"example:tlwd": "lerna exec --scope @styled-rhythm/example-tailwindcss -- yarn start",
 		"theme:plex": "lerna exec --scope @styled-rhythm/theme-plex -- yarn start"
 	},
 	"devDependencies": {
