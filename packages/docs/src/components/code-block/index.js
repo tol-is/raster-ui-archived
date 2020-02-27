@@ -1,20 +1,28 @@
+import { jsx } from './pragma-tailwind';
 import React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { ThemeContext as EmotionContext } from '@emotion/core';
 
 import themeDark from './presets/duotoneDark';
 
+const StyledRhythmTheme = {
+	type: [14, 16, 18, 20, 22, 24],
+	rhythm: [1, 2, 3, 4, 6, 8, 10, 12, 16, 20],
+};
+
 const CodeBlockProvider = ({ code, language, children }) => {
 	return (
-		<LiveProvider
-			language={language}
-			theme={themeDark}
-			code={code}
-			transformCode={code =>
-				'<div className="bg-baseline flex-1">' + code + '</div>'
-			}
-		>
-			{children}
-		</LiveProvider>
+		<EmotionContext.Provider value={StyledRhythmTheme}>
+			<LiveProvider
+				language={language}
+				theme={themeDark}
+				code={code}
+				transformCode={code => `/** @jsx jsx */ ${code}`}
+				scope={{ jsx }}
+			>
+				{children}
+			</LiveProvider>
+		</EmotionContext.Provider>
 	);
 };
 

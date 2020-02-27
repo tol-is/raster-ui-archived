@@ -5,6 +5,8 @@
 	"version": "0.1.0",
 	"author": "Apostolos Christodoulou <me@tol.is>",
 	"dependencies": {
+		"@emotion/core": "^10.0.27",
+		"@emotion/is-prop-valid": "^0.8.6",
 		"@fullhuman/postcss-purgecss": "^2.0.5",
 		"@mdx-js/mdx": "^1.5.1",
 		"@mdx-js/react": "^1.5.1",
