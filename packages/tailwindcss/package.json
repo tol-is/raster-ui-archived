@@ -10,7 +10,7 @@
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"dependencies": {
-		"@styled-rhythm/text-styles": "^0.0.1"
+		"@styled-rhythm/core": "^0.0.1"
 	},
 	"devDependencies": {
 		"parcel": "^1.12.4",

@@ -1,78 +1,63 @@
 var flattenDeep = require('lodash.flattendeep');
+const { columns, column, gap, gapX, gapY } = require('@styled-rhythm/core');
 
 /**
  *
  *
  */
 const createGridStyles = ({ theme, options, e, addUtilities }) => {
-	const columns = Array.from(new Array(24 + 1), (v, i) => i);
+	const columnsScale = Array.from(new Array(24 + 1), (v, i) => i);
 
-	const gridStyles = columns.map(columnIndex => {
-		const columnIndexValue = columnIndex === 0 ? 1 : columnIndex;
+	const gridStyles = columnsScale.map(columnIndex => {
+		const count = columnIndex === 0 ? 1 : columnIndex;
 		return {
-			[`.${e(`columns-${columnIndex}`)}`]: {
-				display: 'grid',
-				gridTemplateColumns: `repeat(${columnIndexValue}, minmax(0,1fr))`,
-				[`& > * `]: {
-					gridColumn: 'span 1',
-				},
-			},
+			[`.${e(`columns-${columnIndex}`)}`]: columns({ count }),
 		};
 	});
 
 	const gridColumnStyles = flattenDeep(
-		columns.map(startIndex => {
-			return columns.map(endIndex => {
-				if (startIndex + endIndex > columns.length) return null;
+		columnsScale.map(startIndex => {
+			return columnsScale.map(endIndex => {
+				if (startIndex + endIndex > columnsScale.length) return null;
 				if (endIndex === 0) return null;
 
 				const startIndexValue = startIndex === 0 ? 1 : startIndex;
 
 				return {
-					[`.${e(`col-${startIndex}/${endIndex}`)}`]: {
-						gridColumn: `${startIndexValue} / span ${endIndex}`,
-					},
+					[`.${e(`col-${startIndex}/${endIndex}`)}`]: column({ start: startIndexValue, span: endIndex }),
 				};
 			});
 		})
 	).filter(Boolean);
 
-	const gridRowStyles = flattenDeep(
-		columns.map(startIndex => {
-			return columns.map(endIndex => {
-				if (endIndex === 0) return null;
+	// const gridRowStyles = flattenDeep(
+	// 	columnsScale.map(startIndex => {
+	// 		return columnsScale.map(endIndex => {
+	// 			if (endIndex === 0) return null;
 
-				const startIndexValue = startIndex === 0 ? 1 : startIndex;
+	// 			const startIndexValue = startIndex === 0 ? 1 : startIndex;
 
-				return {
-					[`.${e(`row-${startIndex}/${endIndex}`)}`]: {
-						gridRow: `${startIndexValue} / span ${endIndex}`,
-					},
-				};
-			});
-		})
-	).filter(Boolean);
+	// 			return {
+	// 				[`.${e(`row-${startIndex}/${endIndex}`)}`]: {
+	// 					gridRow: `${startIndexValue} / span ${endIndex}`,
+	// 				},
+	// 			};
+	// 		});
+	// 	})
+	// ).filter(Boolean);
 
 	const rhythmScale = theme('spacing');
 	const gridGapStyles = Object.keys(rhythmScale).map(key => {
 		const space = rhythmScale[key];
 		return {
-			[`.${e(`columns-gap-${key}`)}`]: {
-				gridRowGap: space,
-				gridColumnGap: space,
-			},
-			[`.${e(`columns-gap-y-${key}`)}`]: {
-				gridRowGap: space,
-			},
-			[`.${e(`columns-gap-x-${key}`)}`]: {
-				gridColumnGap: space,
-			},
+			[`.${e(`columns-gap-${key}`)}`]: gap({ key, space }),
+			[`.${e(`columns-gap-y-${key}`)}`]: gapX({ key, space }),
+			[`.${e(`columns-gap-x-${key}`)}`]: gapY({ key, space }),
 		};
 	});
 
 	addUtilities(gridStyles, ['responsive']);
 	addUtilities(gridColumnStyles, ['responsive']);
-	addUtilities(gridRowStyles, ['responsive']);
 	addUtilities(gridGapStyles, ['responsive']);
 };
 

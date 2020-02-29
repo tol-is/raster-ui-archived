@@ -1,3 +1,5 @@
+const { rhythm, rhythmY, rhythmX } = require('@styled-rhythm/core');
+
 /**
  *
  *
@@ -9,21 +11,9 @@ const createRhythmStyles = ({ theme, options, e, addUtilities }) => {
 	const rhythmStyles = Object.keys(rhythmScale).map(key => {
 		const space = rhythmScale[key];
 		return {
-			[`.${e(`rhythm-${key}`)}`]: {
-				[`& > * + * `]: {
-					marginTop: space,
-				},
-			},
-			[`.${e(`rhythm-y-${key}`)}`]: {
-				[`& > * + * `]: {
-					marginTop: space,
-				},
-			},
-			[`.${e(`rhythm-x-${key}`)}`]: {
-				[`& > * + * `]: {
-					marginLeft: space,
-				},
-			},
+			[`.${e(`rhythm-${key}`)}`]: rhythm({ key, space }),
+			[`.${e(`rhythm-y-${key}`)}`]: rhythmY({ key, space }),
+			[`.${e(`rhythm-x-${key}`)}`]: rhythmX({ key, space }),
 		};
 	});
 

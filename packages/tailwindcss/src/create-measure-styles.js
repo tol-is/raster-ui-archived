@@ -1,21 +1,17 @@
+const { measure, measureMin, measureMax } = require('@styled-rhythm/core');
+
 /**
  *
  *
  */
 const createMeasureStyles = ({ theme, options, e, addUtilities }) => {
-	const { measure } = options;
+	const { measure: measureScale } = options;
 
-	const measureStyles = measure.map((space, idx) => {
+	const measureStyles = measureScale.map((length, idx) => {
 		return {
-			[`.${e(`measure-${idx}`)}`]: {
-				maxWidth: `${space}ch`,
-			},
-			[`.${e(`measure-min-${idx}`)}`]: {
-				minWidth: `${space}ch`,
-			},
-			[`.${e(`measure-max-${idx}`)}`]: {
-				maxWidth: `${space}ch`,
-			},
+			[`.${e(`measure-${idx}`)}`]: measure({ length }),
+			[`.${e(`measure-min-${idx}`)}`]: measureMin({ length }),
+			[`.${e(`measure-max-${idx}`)}`]: measureMax({ length }),
 		};
 	});
 

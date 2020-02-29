@@ -1,5 +1,5 @@
 var flattenDeep = require('lodash.flattendeep');
-const { styleBaselineRel } = require('@styled-rhythm/text-styles');
+const { styleBaselineRel } = require('@styled-rhythm/core');
 
 /**
  *
