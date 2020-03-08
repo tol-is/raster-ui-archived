@@ -35,7 +35,7 @@ const styleCapHeight = ({ font, baseline, fontSize, leading = 0 }) => {
 	const baselineOffset = -1 * (whiteSpaceHalf - descendHeight);
 
 	return {
-		fontFamily: `"${font.familyName}"`,
+		fontFamily: `"${font.familyName}", ${font.fallback}`,
 		fontWeight: font.weight,
 		fontStyle: font.italic ? 'italic' : 'normal',
 		display: 'block',
