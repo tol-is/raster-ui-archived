@@ -3,19 +3,33 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Averta';
-	src: url('../fixtures/fonts/averta/AvertaPE-Regular.woff2') format('woff2'),
-		url('../fixtures/fonts/averta/AvertaPE-Regular.woff') format('woff');
-	font-weight: normal;
+	font-family: 'JetBrainsMono';
+	src: url('../fixtures/fonts/jb-mono/JetBrainsMono-Regular.woff2')
+		format('woff2');
+	font-weight: 400;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Averta';
-	src: url('../fixtures/fonts/averta/AvertaPE-RegularItalic.woff2')
-			format('woff2'),
-		url('../fixtures/fonts/averta/AvertaPE-RegularItalic.woff')
-			format('woff');
-	font-weight: normal;
+	font-family: 'JetBrainsMono';
+	src: url('../fixtures/fonts/jb-mono/JetBrainsMono-Italic.woff2')
+		format('woff2');
+	font-weight: 400;
 	font-style: italic;
+}
+
+@font-face {
+	font-family: 'JetBrainsMono';
+	src: url('../fixtures/fonts/jb-mono/JetBrainsMono-Medium.woff2')
+		format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'JetBrainsMono';
+	src: url('../fixtures/fonts/jb-mono/JetBrainsMono-Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
 }
