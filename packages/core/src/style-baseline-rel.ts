@@ -1,8 +1,48 @@
+import * as CSS from 'csstype';
+
+interface IFont {
+	upm: number;
+	capHeight: number;
+	ascent: number;
+	descent: number;
+	weight: CSS.FontWeightProperty;
+	italic: boolean;
+	familyName: CSS.FontFamilyProperty;
+	fallback: CSS.FontFamilyProperty;
+}
+
+interface ITypeStyleBaselineParams {
+	font: IFont;
+	baseline: number;
+	root: number;
+	fontSize: number;
+	leading: number;
+}
+
+type TypeStyleBaseline = {
+	fontFamily: CSS.FontFamilyProperty;
+	fontWeight: CSS.FontWeightProperty;
+	fontStyle: CSS.FontStyleProperty;
+	display: CSS.DisplayProperty;
+	fontSize: CSS.FontSizeProperty<string>;
+	lineHeight: CSS.LineHeightProperty<string | number>;
+	transform: CSS.TransformProperty;
+	paddingTop: CSS.PaddingTopProperty<string>;
+	'&:before': {
+		content: string;
+		marginTop: CSS.MarginProperty<string>;
+		display: CSS.DisplayProperty;
+		height: CSS.HeightProperty<string | number>;
+	};
+};
+
 /**
  *
  *
  */
-const styleBaseline = ({ font, baseline, root, fontSize, leading = 0 }) => {
+export const styleBaselineRel = (params: ITypeStyleBaselineParams): TypeStyleBaseline => {
+	//
+	const { font, baseline, root, fontSize, leading = 0 } = params;
 	//
 	const preventCollapse = 1;
 
@@ -53,5 +93,3 @@ const styleBaseline = ({ font, baseline, root, fontSize, leading = 0 }) => {
 		},
 	};
 };
-
-module.exports = styleBaseline;

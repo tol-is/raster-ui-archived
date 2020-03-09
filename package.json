@@ -20,7 +20,8 @@
 	"scripts": {
 		"postinstall": "lerna bootstrap",
 		"lern": "lerna run  watch --stream",
-		"start": "npm-run-all --parallel core:dev tailwind:plugin example:tlwd ",
+		"core": "lerna exec --scope @styled-rhythm/core -- yarn develop",
+		"start": "npm-run-all --parallel core tailwind:plugin example:tlwd ",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"docs": "lerna exec --scope @styled-rhythm/docs -- yarn start",
 		"tailwind:plugin": "lerna exec --scope @styled-rhythm/tailwindcss -- yarn start",
