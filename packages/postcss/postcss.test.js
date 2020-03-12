@@ -2,7 +2,7 @@ const cssMatcher = require('jest-matcher-css');
 const postcss = require('postcss');
 const rhythmPlugin = require('./dist/index').default;
 
-console.log(rhythmPlugin);
+console.log(postcss, rhythmPlugin);
 
 expect.extend({
 	toMatchCss: cssMatcher,
@@ -34,13 +34,11 @@ const createPostCSSConfig = (pluginOptions = {}) => {
 
 test('runs', () => {
 	return createPostCSSConfig({
-		responsive: true,
+		root: 16,
 		baseline: 8,
-		leadMax: 0,
-		typeScale: [10, 12],
-		rhythmScale: [0, 1],
+		typeScale: [16, 18, 20, 24],
+		rhythmScale: [0, 1, 2, 4],
 	}).then(css => {
-		console.log(css);
 		expect(true).toBe(true);
 	});
 });
