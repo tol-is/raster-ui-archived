@@ -1,6 +1,6 @@
 export type ObjectOrArray<T, K extends keyof any = keyof any> = T[] | Record<K, T | Record<K, T> | T[]>;
 
-export type Scale = Array<number>;
+export type NumberScale = Array<number>;
 
 export type FontOpenType = {
 	key: string;
@@ -32,13 +32,11 @@ export type FontsScale = Array<FontOpenType | FontVariable>;
 export interface ITheme {
 	root: number;
 	baseline: number;
-	type: Scale;
-	measure: Scale;
-	rhythm: Scale;
-	leading: Scale;
+	type: NumberScale;
+	measure: NumberScale;
+	rhythm: NumberScale;
+	leading: NumberScale;
 	fonts: FontsScale;
 }
 
-declare const theme: ITheme;
-
-export default theme;
+declare const Theme: ITheme;
