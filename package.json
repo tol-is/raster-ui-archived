@@ -22,13 +22,14 @@
 		"lern": "lerna run  watch --stream",
 		"types": "lerna exec --scope @styled-rhythm/types -- yarn develop",
 		"core": "lerna exec --scope @styled-rhythm/core -- yarn develop",
-		"start": "npm-run-all --parallel core tailwind:plugin example:tlwd ",
+		"start": "npm-run-all --parallel test postcss:dev",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"docs": "lerna exec --scope @styled-rhythm/docs -- yarn start",
 		"tailwind:plugin": "lerna exec --scope @styled-rhythm/tailwindcss -- yarn start",
-		"core:dev": "lerna exec --scope @styled-rhythm/core -- yarn start",
-		"example:tlwd": "lerna exec --scope @styled-rhythm/example-tailwindcss -- yarn start",
-		"theme:plex": "lerna exec --scope @styled-rhythm/theme-plex -- yarn start"
+		"postcss:dev": "lerna exec --scope @styled-rhythm/postcss -- yarn develop",
+		"core:dev": "lerna exec --scope @styled-rhythm/core -- yarn develop",
+		"example:tlwd": "lerna exec --scope @styled-rhythm/example-tailwindcss -- yarn develop",
+		"theme:plex": "lerna exec --scope @styled-rhythm/theme-plex -- yarn develop"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",
@@ -50,5 +51,8 @@
 		"react-test-renderer": "^16.9.0",
 		"ts-jest": "^24.1.0"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"npm-run-all": "^4.1.5"
+	}
 }

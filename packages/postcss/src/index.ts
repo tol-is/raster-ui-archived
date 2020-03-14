@@ -1,12 +1,15 @@
 import postcss from 'postcss';
 import { ITheme } from '@styled-rhythm/types';
 
-const rhythmPlugin = postcss.plugin('styled-rhythm', (theme: ITheme) => {
-	let runTheme = Object.assign({}, theme);
+import rhythm from './rhythm';
 
+const plugins = [rhythm];
+
+const rhythmPlugin = postcss.plugin('styled-rhythm', (theme: ITheme) => {
 	return (css, result) => {
-		console.log(runTheme);
-		console.log(css);
+		plugins.forEach(plugin => {
+			plugin(css, theme, result);
+		});
 	};
 });
 
