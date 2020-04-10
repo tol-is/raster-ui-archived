@@ -1,0 +1,28 @@
+{
+	"name": "@styled-rhythm/utils",
+	"version": "0.0.1",
+	"author": "Apostolos Christodoulou <me@tol.is>",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"files": [
+		"dist"
+	],
+	"types": "dist/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rollup -c",
+		"develop": "rollup -cw"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.0",
+		"@types/node": "^12.0.10",
+		"babel-loader": "8.0.6",
+		"rollup": "^1.19.4",
+		"rollup-plugin-typescript2": "^0.24.0",
+		"rollup-plugin-url": "^2.2.2",
+		"typescript": "3.6.2"
+	}
+}
