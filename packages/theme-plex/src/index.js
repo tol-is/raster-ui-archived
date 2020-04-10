@@ -112,7 +112,7 @@ const fonts = [
 ];
 
 module.exports = {
-	baseline: 4,
+	baseline: 8,
 	root: 16,
 	type,
 	rhythm,

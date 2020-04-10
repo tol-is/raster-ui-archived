@@ -2,8 +2,6 @@ const tailwindcss = require('tailwindcss');
 const { themeCompositor } = require('@styled-rhythm/tailwindcss');
 const themePlex = require('@styled-rhythm/theme-plex');
 
-themePlex.baseline = 8;
-
 const baseTailwindConfig = {
 	theme: {
 		screens: {
