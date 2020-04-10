@@ -6,23 +6,6 @@ const { styleBaselineRel } = require('@styled-rhythm/core');
  *
  */
 const createTextStyles = ({ theme, options, e, addUtilities }) => {
-	// const fontConfig = Object.keys(options.fonts).reduce((res, curFamily) => {
-	// 	const fonts = options.fonts[curFamily];
-	// 	fonts.forEach(font => {
-	// 		if (font.variable) {
-	// 			res.push({
-	// 				fontClassName: `${curFamily}-${font.key}}`,
-	// 				...font,
-	// 			});
-	// 		} else {
-	// 			res.push({
-	// 				fontClassName: `${curFamily}-${font.weight}${font.italic ? 'i' : ''}`,
-	// 				...font,
-	// 			});
-	// 		}
-	// 	});
-	// 	return res;
-	// }, []);
 	const familyStyles = options.fonts.map(font => {
 		return {
 			[`.font-${font.key}`]: {
