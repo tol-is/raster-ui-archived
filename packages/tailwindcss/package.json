@@ -6,11 +6,12 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"tdd": "jest --watchAll --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
-		"start": "node ../../scripts/parcel-start.js",
+		"develop": "node ../../scripts/parcel-start.js",
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"dependencies": {
-		"@styled-rhythm/core": "^0.0.1"
+		"@styled-rhythm/core": "^0.0.1",
+		"@styled-rhythm/utils": "^0.0.1"
 	},
 	"devDependencies": {
 		"parcel": "^1.12.4",
