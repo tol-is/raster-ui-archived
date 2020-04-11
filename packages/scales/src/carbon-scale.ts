@@ -1,21 +1,13 @@
-module.exports = (params = {}) => {
-  const {
-    length = 20,
-    minSize = 12,
-    interval = 4,
-    step = 2,
-    transform = v => v
-  } = params;
+export const ibmCarbonScale = (params: any = {}) => {
+	const { base = 16, interval = 4, increment = 2 } = params;
 
-  const getSize = count => {
-    if (count <= 1) {
-      return minSize;
-    }
+	const computeFontSize = step => {
+		if (step <= 1) {
+			return base;
+		}
 
-    return getSize(count - 1) + Math.floor((count - 2) / interval + 1) * step;
-  };
+		return computeFontSize(step - 1) + Math.floor((step - 2) / interval + 1) * increment;
+	};
 
-  return Array.from({ length: length }, (_, i) => getSize(i + 1)).map(
-    transform
-  );
+	return step => computeFontSize(step + 1);
 };

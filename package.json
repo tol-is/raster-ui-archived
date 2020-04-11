@@ -28,6 +28,7 @@
 		"core:dev": "lerna exec --scope @styled-rhythm/core -- yarn develop",
 		"docs:dev": "lerna exec --scope @styled-rhythm/docs -- yarn start",
 		"utils:dev": "lerna exec --scope @styled-rhythm/utils -- yarn develop",
+		"scales:dev": "lerna exec --scope @styled-rhythm/scales -- yarn develop",
 		"types:dev": "lerna exec --scope @styled-rhythm/types -- yarn develop",
 		"postcss:dev": "lerna exec --scope @styled-rhythm/postcss -- yarn develop",
 		"tailwind:dev": "lerna exec --scope @styled-rhythm/tailwindcss -- yarn develop",
