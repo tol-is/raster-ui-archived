@@ -1,22 +1,23 @@
 const tailwindcss = require('tailwindcss');
 const { themeCompositor } = require('@styled-rhythm/tailwindcss');
+const themePlex = require('@styled-rhythm/theme-plex');
 
-const themePlex = require('./theme');
-themePlex.fonts = {
-	mono: [
-		{
-			familyName: 'JetBrainsMono',
-			fallback: 'monospace',
-			upm: 1000,
-			xHeight: 486,
-			capHeight: 710,
-			ascent: 978,
-			descent: -258,
-			weight: 400,
-			italic: false,
-		},
-	],
-};
+// const themePlex = require('./theme');
+// themePlex.fonts = {
+// 	mono: [
+// 		{
+// 			familyName: 'JetBrainsMono',
+// 			fallback: 'monospace',
+// 			upm: 1000,
+// 			xHeight: 486,
+// 			capHeight: 710,
+// 			ascent: 978,
+// 			descent: -258,
+// 			weight: 400,
+// 			italic: false,
+// 		},
+// 	],
+// };
 
 const tailwindConfig = {
 	theme: {},

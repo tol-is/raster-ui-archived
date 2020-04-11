@@ -10,6 +10,8 @@
 		"@fullhuman/postcss-purgecss": "^2.0.5",
 		"@mdx-js/mdx": "^1.5.1",
 		"@mdx-js/react": "^1.5.1",
+		"@styled-rhythm/tailwindcss": "^0.0.1",
+		"@styled-rhythm/theme-plex": "^0.0.1",
 		"classnames": "^2.2.6",
 		"framer-motion": "^1.7.2",
 		"gatsby": "^2.18.12",

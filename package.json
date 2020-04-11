@@ -20,17 +20,18 @@
 	"scripts": {
 		"postinstall": "lerna bootstrap",
 		"start": "npm-run-all --parallel test postcss:dev",
+		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"common": "npm-run-all --parallel types:dev core:dev utils:dev",
+		"docs": "npm-run-all --parallel common docs:dev test",
 		"postcss": "npm-run-all --parallel common postcss:dev test",
 		"tailwind": "npm-run-all --parallel common tailwind:dev example:tailwind:dev",
-		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"core:dev": "lerna exec --scope @styled-rhythm/core -- yarn develop",
+		"docs:dev": "lerna exec --scope @styled-rhythm/docs -- yarn start",
 		"utils:dev": "lerna exec --scope @styled-rhythm/utils -- yarn develop",
 		"types:dev": "lerna exec --scope @styled-rhythm/types -- yarn develop",
 		"postcss:dev": "lerna exec --scope @styled-rhythm/postcss -- yarn develop",
 		"tailwind:dev": "lerna exec --scope @styled-rhythm/tailwindcss -- yarn develop",
 		"example:tailwind:dev": "lerna exec --scope @styled-rhythm/example-tailwindcss -- yarn develop",
-		"docs:dev": "lerna exec --scope @styled-rhythm/docs -- yarn start",
 		"theme:plex:dev": "lerna exec --scope @styled-rhythm/theme-plex -- yarn build"
 	},
 	"devDependencies": {
