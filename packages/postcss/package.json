@@ -32,6 +32,7 @@
 		"typescript": "3.6.2"
 	},
 	"dependencies": {
+		"@styled-rhythm/theme-test": "^0.0.1",
 		"@styled-rhythm/core": "^0.0.1",
 		"@styled-rhythm/utils": "^0.0.1",
 		"postcss-js": "^2.0.3",

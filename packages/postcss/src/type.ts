@@ -1,5 +1,4 @@
 import { Theme } from '@styled-rhythm/types';
-import replace from './replace-rule';
 
 export const typePlugin = (css: any, theme: Theme, result: any) => {
 	// css.walkAtRules('font', atRule => {

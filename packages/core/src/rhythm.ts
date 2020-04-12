@@ -1,4 +1,4 @@
-import { Theme, Style } from '@styled-rhythm/types';
+import { Style } from '@styled-rhythm/types';
 
 export const rhythm = ({ space }: { space: string }): Style => {
 	return {

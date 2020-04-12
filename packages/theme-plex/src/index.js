@@ -1,8 +1,52 @@
+const root = 16;
+const baseline = 8;
+
 // type scale in px
-const type = [14, 16, 18, 20, 22, 24, 28, 32, 36, 40, 44, 48, 54, 60, 66, 72, 80, 88, 96, 104];
+const type = [
+	14,
+	16,
+	18,
+	20,
+	22,
+	24,
+	28,
+	32,
+	36,
+	40,
+	44,
+	48,
+	54,
+	60,
+	66,
+	72,
+	80,
+	88,
+	96,
+	104,
+];
 
 // rhythm scale in baseline units
-const rhythm = [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 21, 24, 28, 32, 36, 40, 48, 56];
+const rhythm = [
+	0,
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	8,
+	10,
+	12,
+	16,
+	21,
+	24,
+	28,
+	32,
+	36,
+	40,
+	48,
+	56,
+];
 rhythm.px = '1px';
 
 // measure scale in characters unit
@@ -112,8 +156,8 @@ const fonts = [
 ];
 
 module.exports = {
-	baseline: 8,
-	root: 16,
+	baseline,
+	root,
 	type,
 	rhythm,
 	measure,

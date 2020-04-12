@@ -19,10 +19,10 @@
 	"main": "index.js",
 	"scripts": {
 		"postinstall": "lerna bootstrap",
-		"start": "npm-run-all --parallel test postcss",
+		"start": "npm-run-all --parallel common:dev postcss:dev test",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"docs": "npm-run-all --parallel common:dev docs:dev",
-		"postcss": "npm-run-all --parallel common:dev postcss:dev example:postcss:dev",
+		"postcss": "npm-run-all --parallel common:dev postcss:dev test example:postcss:dev",
 		"tailwind": "npm-run-all --parallel common:dev tailwind:dev example:tailwind:dev",
 		"common:dev": "npm-run-all --parallel types:dev core:dev utils:dev",
 		"core:dev": "lerna exec --scope @styled-rhythm/core -- yarn develop",
@@ -32,9 +32,10 @@
 		"types:dev": "lerna exec --scope @styled-rhythm/types -- yarn develop",
 		"postcss:dev": "lerna exec --scope @styled-rhythm/postcss -- yarn develop",
 		"tailwind:dev": "lerna exec --scope @styled-rhythm/tailwindcss -- yarn develop",
-		"example:tailwind:dev": "lerna exec --scope @styled-rhythm/example-tailwindcss -- yarn develop",
 		"example:postcss:dev": "lerna exec --scope @styled-rhythm/example-postcss -- yarn develop",
-		"theme:plex:dev": "lerna exec --scope @styled-rhythm/theme-plex -- yarn build"
+		"example:tailwind:dev": "lerna exec --scope @styled-rhythm/example-tailwindcss -- yarn develop",
+		"theme:plex:dev": "lerna exec --scope @styled-rhythm/theme-plex -- yarn build",
+		"theme:test:dev": "lerna exec --scope @styled-rhythm/theme-test -- yarn build"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",
@@ -48,6 +49,7 @@
 		"benchmark": "^2.1.4",
 		"jest": "^24.9.0",
 		"jest-emotion": "^10.0.17",
+		"jest-matcher-css": "^1.1.0",
 		"jshint": "^2.10.2",
 		"lerna": "^3.20.2",
 		"prun": "^1.0.1",

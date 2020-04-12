@@ -1,12 +1,36 @@
-import replace from './replace-rule';
-import { get, is } from '@styled-rhythm/utils';
-const { columns, column, gap, gapX, gapY } = require('@styled-rhythm/core');
+import { Theme } from '@styled-rhythm/types';
+import { get, is, pxToRem } from '@styled-rhythm/utils';
+import {
+	matrix,
+	cell,
+	matrixGap,
+	matrixGapX,
+	matrixGapY,
+} from '@styled-rhythm/core';
 
-export const columnsPlugin = (css, theme, result) => {
+import replace from './lib/replace-rule';
+
+export const matrixPlugin = (css: any, theme: Theme, result: any) => {
+	//
+	const { root, baseline } = theme;
+	const toRootEm = pxToRem(root);
+	//
+	const getRhythmValue = value => {
+		const scaleValue = get(theme.rhythm, value, value);
+
+		const styleValue = is.num(scaleValue)
+			? `${toRootEm(scaleValue * baseline)}rem`
+			: scaleValue;
+
+		return styleValue;
+	};
+
 	css.walkDecls(decl => {
 		const { prop, value } = decl;
+
 		if (prop === 'matrix') {
-			replace(decl, columns({ count: value }));
+			replace(decl, matrix({ columns: value }));
+			return;
 		}
 
 		if (prop === 'cell') {
@@ -15,65 +39,28 @@ export const columnsPlugin = (css, theme, result) => {
 			let start = first;
 			let span = second;
 			if (!is.exists(second)) {
-				start = 1;
+				start = undefined;
 				span = first;
 			}
-			console.log(start, span);
-			// const length = get(theme.measure, value, value);
-			// replace(decl, column({ length }));
+			replace(decl, cell({ start, span }));
+			return;
 		}
 
-		// grid-column: 1 / 2;
-
 		if (prop === 'matrix-gap') {
-			const space = get(theme.rhythm, value, value);
-			replace(decl, gap({ space }));
+			replace(decl, matrixGap({ space: getRhythmValue(value) }));
+			return;
 		}
 
 		if (prop === 'matrix-gap-x') {
-			const space = get(theme.rhythm, value, value);
-			replace(decl, gapX({ space }));
+			replace(decl, matrixGapX({ space: getRhythmValue(value) }));
+			return;
 		}
 
 		if (prop === 'matrix-gap-y') {
-			const space = get(theme.rhythm, value, value);
-			replace(decl, gapY({ space }));
+			replace(decl, matrixGapY({ space: getRhythmValue(value) }));
+			return;
 		}
 	});
 };
 
-// export const columns = ({ count }: { count: Number }): Style => {
-// 	return {
-// 		display: 'grid',
-// 		gridTemplateColumns: `repeat(${count}, minmax(0,1fr))`,
-// 		[`& > * `]: {
-// 			gridColumn: 'span 1',
-// 		},
-// 	};
-// };
-
-// export const column = ({ start, span }: { start: Number; span: Number }): Style => {
-// 	return {
-// 		gridColumn: `${start} / span ${span}`,
-// 	};
-// };
-
-// export const gap = ({ space }: { space: string }): Style => {
-// 	return {
-// 		gridRowGap: space,
-// 		gridColumnGap: space,
-// 	};
-// };
-
-// export const gapX = ({ space }: { space: string }): Style => {
-// 	return {
-// 		gridColumnGap: space,
-// 	};
-// };
-
-// export const gapY = ({ space }: { space: string }): Style => {
-// 	return {
-// 		gridRowGap: space,
-// 	};
-
-export default columnsPlugin;
+export default matrixPlugin;

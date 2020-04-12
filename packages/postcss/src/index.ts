@@ -27,14 +27,10 @@ const plugins = [type, rhythm, measure, matrix];
 const rhythmPlugin = postcss.plugin('styled-rhythm', (config: ThemeConfig) => {
 	const { root, baseline, rhythm, fonts, leading, measure, type } = config;
 
-	// - rhythm is described in baseline units
-	// - convert rhythm scale to rem
-	const rhythmScale = baselineScaleToRem(baseline)(root)(rhythm);
-
 	const theme: Theme = {
 		root,
 		baseline,
-		rhythm: rhythmScale,
+		rhythm,
 		fonts,
 		leading,
 		measure,

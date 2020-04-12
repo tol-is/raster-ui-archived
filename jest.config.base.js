@@ -10,14 +10,21 @@ module.exports = {
 	moduleFileExtensions: ['js', 'ts', 'tsx', 'json', 'node'],
 	coveragePathIgnorePatterns: ['(tests/.*.mock).(|ts?|tsx?)$'],
 	verbose: true,
-	testPathIgnorePatterns: ['/__snapshots__/', '/.cache/'],
+	testPathIgnorePatterns: ['/__snapshots__/', '/.cache/', '/lib/'],
 	moduleNameMapper: {
-		'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|mp4|webm|wav|mp3|m4a|aac|oga)$': '../../../config/jest/fileMock.js',
+		'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|mp4|webm|wav|mp3|m4a|aac|oga)$':
+			'../../../config/jest/fileMock.js',
 		'\\.(css)$': 'identity-obj-proxy',
 	},
 	collectCoverage: false,
 	collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.d.ts', '!<rootDir>/dist/'],
-	modulePathIgnorePatterns: ['/__snapshots__/', 'dummy', 'scripts', 'docs', '__tests__/lib/'],
+	modulePathIgnorePatterns: [
+		'/__snapshots__/',
+		'dummy',
+		'scripts',
+		'docs',
+		'__tests__/lib/',
+	],
 	snapshotSerializers: ['jest-emotion'],
 	globals: {
 		'process.env.__DEV__': true,

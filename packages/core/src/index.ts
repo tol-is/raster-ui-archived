@@ -1,5 +1,5 @@
 export * from './measure';
 export * from './rhythm';
-export * from './columns';
+export * from './matrix';
 
 export * from './style-baseline-rel';

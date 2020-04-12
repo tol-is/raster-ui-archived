@@ -1,5 +1,10 @@
+@custom-media --viewport-medium (width >= 50rem);
+
 @import './reset.pcss';
 
 .article-content {
-	rhythm: 3;
+	rhythm: 2;
+	@media (--viewport-medium) {
+		rhythm: 3;
+	}
 }

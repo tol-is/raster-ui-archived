@@ -1,0 +1,15 @@
+{
+	"name": "@styled-rhythm/theme-test",
+	"version": "0.0.1",
+	"author": "Apostolos Christodoulou <me@tol.is>",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "node ../../scripts/parcel-start.js",
+		"build": "node ../../scripts/parcel-build.js"
+	},
+	"devDependencies": {
+		"parcel": "^1.12.4",
+		"parcel-bundler": "^1.12.4"
+	}
+}

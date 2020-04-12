@@ -1,20 +1,19 @@
-import { Theme, Style } from '@styled-rhythm/types';
-import { is } from '@styled-rhythm/utils';
+import { Style } from '@styled-rhythm/types';
 
-export const measure = ({ length }: { length: Number }): Style => {
+export const measure = ({ space }: { space: string }): Style => {
 	return {
-		maxWidth: `${length}${is.num(length) ? 'ch' : ''}`,
+		maxWidth: space,
 	};
 };
 
-export const measureMin = ({ length }: { length: Number }): Style => {
+export const measureMin = ({ space }: { space: string }): Style => {
 	return {
-		minWidth: `${length}${is.num(length) ? 'ch' : ''}`,
+		minWidth: space,
 	};
 };
 
-export const measureMax = ({ length }: { length: Number }): Style => {
+export const measureMax = ({ space }: { space: string }): Style => {
 	return {
-		maxWidth: `${length}${is.num(length) ? 'ch' : ''}`,
+		maxWidth: space,
 	};
 };

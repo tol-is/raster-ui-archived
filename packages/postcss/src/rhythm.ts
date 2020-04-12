@@ -1,19 +1,44 @@
-import replace from './replace-rule';
-import { get } from '@styled-rhythm/utils';
-const { rhythm, rhythmY, rhythmX } = require('@styled-rhythm/core');
+import { Theme } from '@styled-rhythm/types';
+import {
+	rhythm as rhythmFn,
+	rhythmY as rhythmYFn,
+	rhythmX as rhythmXFn,
+} from '@styled-rhythm/core';
+import { is, get, pxToRem } from '@styled-rhythm/utils';
 
-export const rhythmPlugin = (css, theme, result) => {
+import replace from './lib/replace-rule';
+
+export const rhythmPlugin = (css: any, theme: Theme) => {
+	//
+	const { root, baseline } = theme;
+	const toRootEm = pxToRem(root);
+	//
+	const getRhythmValue = value => {
+		const scaleValue = get(theme.rhythm, value, value);
+
+		const styleValue = is.num(scaleValue)
+			? `${toRootEm(scaleValue * baseline)}rem`
+			: scaleValue;
+
+		return styleValue;
+	};
+
 	css.walkDecls(decl => {
 		const { prop, value } = decl;
+
 		if (prop === 'rhythm') {
-			const space = get(theme.rhythm, value, value);
-			replace(decl, rhythm({ space }));
-		} else if (prop === 'rhythm-x') {
-			const space = get(theme.rhythm, value, value);
-			replace(decl, rhythmX({ space }));
-		} else if (prop === 'rhythm-y') {
-			const space = get(theme.rhythm, value, value);
-			replace(decl, rhythmY({ space }));
+			replace(decl, rhythmFn({ space: getRhythmValue(value) }));
+			return;
+		}
+
+		if (prop === 'rhythm-x') {
+			replace(decl, rhythmXFn({ space: getRhythmValue(value) }));
+			return;
+		}
+
+		if (prop === 'rhythm-y') {
+			replace(decl, rhythmYFn({ space: getRhythmValue(value) }));
+			return;
 		}
 	});
 };
