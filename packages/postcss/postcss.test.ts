@@ -13,8 +13,53 @@ const createPostCSSConfig = (pluginOptions = {}) => {
 		.process(
 			`
 			.stack {
-				@rhythm 3;
+				rhythm: 3;
 			}
+
+			.stack-x {
+				rhythm-x: 3;
+			}
+
+			.stack-y {
+				rhythm-y: 3;
+			}
+
+			.length {
+				measure: 12rem;
+			}
+
+			.length-min {
+				measure-min: 3;
+			}
+
+			.length-max {
+				measure-max: 3;
+			}
+
+			.raster{
+				columns: 5;
+				columns-gap: 3;
+			}
+
+			.raster-x{
+				matrix: 5;
+				matrix-gap-x: 3;
+			}
+
+			.raster-y{
+				matrix: 5;
+				matrix-gap-y: 3;
+			}
+
+			.raster-cell {
+				cell: 1/4;
+			}
+
+			.raster-cell {
+				cell: 3;
+			}
+
+			
 		`,
 			{
 				from: undefined,
@@ -30,24 +75,10 @@ test('runs', () => {
 		root: 16,
 		baseline: 8,
 		type: [16, 18, 20, 24],
+		measure: [16, 18, 20, 24],
 		rhythm: [0, 1, 2, 4],
 	}).then(css => {
-		console.log(css);
+		// console.log(css);
 		expect(true).toBe(true);
 	});
 });
-// .columns {
-// 	@columns 3;
-// }
-// .baseline {
-// 	@baseline sans-400i 14/5;
-// }
-// .caps {
-// 	@caps sans-400i 14/5;
-// }
-// .xheight {
-// 	@xheight sans-400i 14/5;
-// }
-// .measure {
-// 	@measure 2;
-// }

@@ -1,23 +1,13 @@
 import * as CSS from 'csstype';
+import { FontOpenType } from '@styled-rhythm/types';
 
-interface IFont {
-	upm: number;
-	capHeight: number;
-	ascent: number;
-	descent: number;
-	weight: CSS.FontWeightProperty;
-	italic: boolean;
-	familyName: CSS.FontFamilyProperty;
-	fallback: CSS.FontFamilyProperty;
-}
-
-interface ITypeStyleBaselineParams {
-	font: IFont;
+type TypeStyleBaselineParams = {
+	font: FontOpenType;
 	baseline: number;
 	root: number;
 	fontSize: number;
 	leading: number;
-}
+};
 
 type TypeStyleBaseline = {
 	fontFamily: CSS.FontFamilyProperty;
@@ -40,7 +30,7 @@ type TypeStyleBaseline = {
  *
  *
  */
-export const styleBaselineRel = (params: ITypeStyleBaselineParams): TypeStyleBaseline => {
+export const styleBaselineRel = (params: TypeStyleBaselineParams): TypeStyleBaseline => {
 	//
 	const { font, baseline, root, fontSize, leading = 0 } = params;
 	//

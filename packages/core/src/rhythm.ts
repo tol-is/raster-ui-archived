@@ -1,8 +1,4 @@
-import * as CSS from 'csstype';
-
-interface Style extends CSS.Properties {
-	[key: string]: any;
-}
+import { Theme, Style } from '@styled-rhythm/types';
 
 export const rhythm = ({ space }: { space: string }): Style => {
 	return {
