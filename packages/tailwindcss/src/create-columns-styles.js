@@ -30,22 +30,6 @@ const createGridStyles = ({ theme, options, e, addUtilities }) => {
 		})
 	).filter(Boolean);
 
-	// const gridRowStyles = flattenDeep(
-	// 	columnsScale.map(startIndex => {
-	// 		return columnsScale.map(endIndex => {
-	// 			if (endIndex === 0) return null;
-
-	// 			const startIndexValue = startIndex === 0 ? 1 : startIndex;
-
-	// 			return {
-	// 				[`.${e(`row-${startIndex}/${endIndex}`)}`]: {
-	// 					gridRow: `${startIndexValue} / span ${endIndex}`,
-	// 				},
-	// 			};
-	// 		});
-	// 	})
-	// ).filter(Boolean);
-
 	const rhythmScale = theme('spacing');
 	const gridGapStyles = Object.keys(rhythmScale).map(key => {
 		const space = rhythmScale[key];
