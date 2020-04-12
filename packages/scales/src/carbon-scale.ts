@@ -11,3 +11,5 @@ export const ibmCarbonScale = (params: any = {}) => {
 
 	return step => computeFontSize(step + 1);
 };
+
+export default ibmCarbonScale;
