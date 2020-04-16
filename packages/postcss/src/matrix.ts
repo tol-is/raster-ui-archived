@@ -9,21 +9,11 @@ import {
 } from '@styled-rhythm/core';
 
 import replace from './lib/replace-rule';
+import getRhythm from './lib/get-rhythm';
 
 export const matrixPlugin = (css: any, theme: Theme, result: any) => {
 	//
-	const { root, baseline } = theme;
-	const toRootEm = pxToRem(root);
-	//
-	const getRhythmValue = value => {
-		const scaleValue = get(theme.rhythm, value, value);
-
-		const styleValue = is.num(scaleValue)
-			? `${toRootEm(scaleValue * baseline)}rem`
-			: scaleValue;
-
-		return styleValue;
-	};
+	const getRhythmValue = getRhythm(theme);
 
 	css.walkDecls(decl => {
 		const { prop, value } = decl;

@@ -4,24 +4,13 @@ import {
 	rhythmY as rhythmYFn,
 	rhythmX as rhythmXFn,
 } from '@styled-rhythm/core';
-import { is, get, pxToRem } from '@styled-rhythm/utils';
 
 import replace from './lib/replace-rule';
+import getRhythm from './lib/get-rhythm';
 
 export const rhythmPlugin = (css: any, theme: Theme) => {
 	//
-	const { root, baseline } = theme;
-	const toRootEm = pxToRem(root);
-	//
-	const getRhythmValue = value => {
-		const scaleValue = get(theme.rhythm, value, value);
-
-		const styleValue = is.num(scaleValue)
-			? `${toRootEm(scaleValue * baseline)}rem`
-			: scaleValue;
-
-		return styleValue;
-	};
+	const getRhythmValue = getRhythm(theme);
 
 	css.walkDecls(decl => {
 		const { prop, value } = decl;

@@ -2,7 +2,7 @@ const root = 8;
 const baseline = 8;
 
 // type scale in px
-const type = [14, 16, 20, 24, 30];
+const type = [10, 20, 30, 40, 50];
 
 // rhythm scale in baseline units
 const rhythm = [0, 1, 2, 3, 4];
@@ -42,6 +42,7 @@ const fonts = [
 ];
 
 module.exports = {
+	relative: true,
 	baseline,
 	root,
 	type,

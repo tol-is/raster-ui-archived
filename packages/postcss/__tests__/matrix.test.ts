@@ -1,4 +1,4 @@
-import { matcher, logger } from './lib/jester';
+import { matcher } from './lib/jester';
 
 /**
  *

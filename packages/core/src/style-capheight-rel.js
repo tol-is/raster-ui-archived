@@ -2,13 +2,13 @@
  *
  *
  */
-const styleCapHeight = ({ font, baseline, root, fontSize, leading = 0 }) => {
+const styleCapHeight = ({ font, baseline, root, size, leading = 0 }) => {
 	//
 	const preventCollapse = 1;
 
 	// cap height
 	const capHeightRatio = font.capHeight / font.upm;
-	const typeHeight = capHeightRatio * fontSize;
+	const typeHeight = capHeightRatio * size;
 
 	//
 	const typesRows = Math.floor(typeHeight / baseline);
@@ -16,7 +16,10 @@ const styleCapHeight = ({ font, baseline, root, fontSize, leading = 0 }) => {
 	// round leading
 	const leadingRound = Math.round(leading);
 	// if negative min value is typeRows
-	const leadingValue = leadingRound < 0 ? Math.min(Math.abs(leadingRound), typesRows) * -1 : leadingRound;
+	const leadingValue =
+		leadingRound < 0
+			? Math.min(Math.abs(leadingRound), typesRows) * -1
+			: leadingRound;
 
 	// leading height in px
 	const leadingHeight = leadingValue * baseline;
@@ -29,8 +32,9 @@ const styleCapHeight = ({ font, baseline, root, fontSize, leading = 0 }) => {
 	const cropHeight = negativeSpace;
 
 	// align to baseline
-	const boundingBoxHeight = ((font.ascent + Math.abs(font.descent)) / font.upm) * fontSize;
-	const descendHeight = Math.abs(font.descent / font.upm) * fontSize;
+	const boundingBoxHeight =
+		((font.ascent + Math.abs(font.descent)) / font.upm) * size;
+	const descendHeight = Math.abs(font.descent / font.upm) * size;
 	const whiteSpaceHalf = (boundingBoxHeight - lineHeight) / 2;
 	const baselineOffset = -1 * (whiteSpaceHalf - descendHeight);
 
@@ -39,13 +43,13 @@ const styleCapHeight = ({ font, baseline, root, fontSize, leading = 0 }) => {
 		fontWeight: font.weight,
 		fontStyle: font.italic ? 'italic' : 'normal',
 		display: 'block',
-		fontSize: `${fontSize / root}rem`,
-		lineHeight: `${lineHeight / fontSize}`,
-		transform: `translateY(${baselineOffset / fontSize}em)`,
+		fontSize: `${size / root}rem`,
+		lineHeight: `${lineHeight / size}`,
+		transform: `translateY(${baselineOffset / size}em)`,
 		paddingTop: `${preventCollapse}px`,
 		['&:before']: {
 			content: `''`,
-			marginTop: `calc(${-(cropHeight + preventCollapse) / fontSize}em )`,
+			marginTop: `calc(${-(cropHeight + preventCollapse) / size}em )`,
 			display: 'block',
 			height: 0,
 		},

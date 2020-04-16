@@ -1,44 +1,26 @@
 import * as CSS from 'csstype';
-import { FontOpenType } from '@styled-rhythm/types';
-
-type TypeStyleBaselineParams = {
-	font: FontOpenType;
-	baseline: number;
-	root: number;
-	fontSize: number;
-	leading: number;
-};
-
-type TypeStyleBaseline = {
-	fontFamily: CSS.FontFamilyProperty;
-	fontWeight: CSS.FontWeightProperty;
-	fontStyle: CSS.FontStyleProperty;
-	display: CSS.DisplayProperty;
-	fontSize: CSS.FontSizeProperty<string>;
-	lineHeight: CSS.LineHeightProperty<string | number>;
-	transform: CSS.TransformProperty;
-	paddingTop: CSS.PaddingTopProperty<string>;
-	'&:before': {
-		content: string;
-		marginTop: CSS.MarginProperty<string>;
-		display: CSS.DisplayProperty;
-		height: CSS.HeightProperty<string | number>;
-	};
-};
+import {
+	StyleTypography,
+	TypographyStyleRelParams,
+} from '@styled-rhythm/types';
 
 /**
  *
  *
  */
-export const styleBaselineRel = (params: TypeStyleBaselineParams): TypeStyleBaseline => {
-	//
-	const { font, baseline, root, fontSize, leading = 0 } = params;
+export const styleBaselineRel = ({
+	font,
+	baseline,
+	root,
+	size,
+	leading = 0,
+}: TypographyStyleRelParams): StyleTypography => {
 	//
 	const preventCollapse = 1;
 
 	// cap height
 	const capHeightRatio = font.capHeight / font.upm;
-	const capSize = capHeightRatio * fontSize;
+	const capSize = capHeightRatio * size;
 
 	// content box / round up baseline unit
 	const typeRows = Math.ceil(capSize / baseline);
@@ -47,7 +29,10 @@ export const styleBaselineRel = (params: TypeStyleBaselineParams): TypeStyleBase
 	// round leading
 	const leadingRound = Math.round(leading);
 	// if negative min value is typeRows
-	const leadingValue = leadingRound < 0 ? Math.min(Math.abs(leadingRound), typeRows) * -1 : leadingRound;
+	const leadingValue =
+		leadingRound < 0
+			? Math.min(Math.abs(leadingRound), typeRows) * -1
+			: leadingRound;
 
 	// leading height in px
 	const leadingHeight = leadingValue * baseline;
@@ -60,9 +45,10 @@ export const styleBaselineRel = (params: TypeStyleBaselineParams): TypeStyleBase
 	const cropHeight = negativeSpace - (negativeSpace % baseline);
 
 	// align to baseline
-	const boundingBoxHeight = ((font.ascent + Math.abs(font.descent)) / font.upm) * fontSize;
+	const boundingBoxHeight =
+		((font.ascent + Math.abs(font.descent)) / font.upm) * size;
 
-	const descendHeight = Math.abs(font.descent / font.upm) * fontSize;
+	const descendHeight = Math.abs(font.descent / font.upm) * size;
 	const whiteSpaceHalf = (boundingBoxHeight - lineHeight) / 2;
 	const baselineOffset = -1 * (whiteSpaceHalf - descendHeight);
 
@@ -71,13 +57,13 @@ export const styleBaselineRel = (params: TypeStyleBaselineParams): TypeStyleBase
 		fontWeight: font.weight,
 		fontStyle: font.italic ? 'italic' : 'normal',
 		display: 'block',
-		fontSize: `${fontSize / root}rem`,
-		lineHeight: `${lineHeight / fontSize}`,
-		transform: `translateY(${baselineOffset / fontSize}em)`,
+		fontSize: `${size / root}rem`,
+		lineHeight: `${lineHeight / size}`,
+		transform: `translateY(${baselineOffset / size}em)`,
 		paddingTop: `${preventCollapse}px`,
 		['&:before']: {
 			content: `''`,
-			marginTop: `calc(${-(cropHeight + preventCollapse) / fontSize}em )`,
+			marginTop: `calc(${-(cropHeight + preventCollapse) / size}em )`,
 			display: 'block',
 			height: 0,
 		},

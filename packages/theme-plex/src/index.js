@@ -156,6 +156,7 @@ const fonts = [
 ];
 
 module.exports = {
+	relative: true,
 	baseline,
 	root,
 	type,

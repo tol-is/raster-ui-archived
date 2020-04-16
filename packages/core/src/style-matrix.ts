@@ -1,8 +1,5 @@
-import * as CSS from 'csstype';
+import { Style } from '@styled-rhythm/types';
 
-interface Style extends CSS.Properties {
-	[key: string]: any;
-}
 export const matrix = ({ columns }: { columns: number }): Style => {
 	return {
 		display: 'grid',

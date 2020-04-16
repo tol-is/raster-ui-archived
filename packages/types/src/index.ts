@@ -1,10 +1,10 @@
 import * as CSS from 'csstype';
 
-export type ObjectOrArray<T, K extends keyof any = keyof any> = T[] | Record<K, T | Record<K, T> | T[]>;
+export type ObjectOrArray<T, K extends keyof any = keyof any> =
+	| T[]
+	| Record<K, T | Record<K, T> | T[]>;
 
 export type NumberScale = Array<number>;
-
-export type Font = FontOpenType | FontVariable;
 
 export interface FontOpenType {
 	key: string;
@@ -19,19 +19,19 @@ export interface FontOpenType {
 	italic: boolean;
 }
 
-export interface FontVariable {
-	key: string;
-	familyName: string;
-	fallback: string;
-	upm: number;
-	xHeight: number;
-	capHeight: number;
-	ascent: number;
-	descent: number;
-	axis: any; // TODO
-}
+// export interface FontVariable {
+// 	key: string;
+// 	familyName: string;
+// 	fallback: string;
+// 	upm: number;
+// 	xHeight: number;
+// 	capHeight: number;
+// 	ascent: number;
+// 	descent: number;
+// 	axis: any; // TODO
+// }
 
-export type FontsScale = Array<FontOpenType | FontVariable>;
+export type FontsScale = Array<FontOpenType>;
 
 export interface ThemeConfig {
 	root: number;
@@ -44,6 +44,7 @@ export interface ThemeConfig {
 }
 
 export interface Theme {
+	relative: boolean;
 	root: number;
 	baseline: number;
 	type: NumberScale;
@@ -56,3 +57,35 @@ export interface Theme {
 export interface Style extends CSS.Properties {
 	[key: string]: any;
 }
+
+export type TypographyStyleRelParams = {
+	font: FontOpenType;
+	baseline: number;
+	root: number;
+	size: number;
+	leading: number;
+};
+
+export type TypographyStyleParams = {
+	font: FontOpenType;
+	baseline: number;
+	size: number;
+	leading: number;
+};
+
+export type StyleTypography = {
+	fontFamily: CSS.FontFamilyProperty;
+	fontWeight: CSS.FontWeightProperty;
+	fontStyle: CSS.FontStyleProperty;
+	display: CSS.DisplayProperty;
+	fontSize: CSS.FontSizeProperty<string>;
+	lineHeight: CSS.LineHeightProperty<string | number>;
+	transform: CSS.TransformProperty;
+	paddingTop: CSS.PaddingTopProperty<string>;
+	'&:before': {
+		content: string;
+		marginTop: CSS.MarginProperty<string>;
+		display: CSS.DisplayProperty;
+		height: CSS.HeightProperty<string | number>;
+	};
+};

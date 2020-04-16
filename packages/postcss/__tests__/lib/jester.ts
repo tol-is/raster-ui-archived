@@ -1,11 +1,11 @@
-const theme = require('@styled-rhythm/theme-test');
-const { stripcss } = require('@styled-rhythm/utils');
+import theme from '@styled-rhythm/theme-test';
+import { stripcss } from '@styled-rhythm/utils';
 
-const postcss = require('postcss');
-const styledRhythmPostcss = require('../../dist/index').default;
+import postcss from 'postcss';
+import styledRhythmPostcss from '../../src';
 
-const createPostCSSConfig = (pluginOptions = {}, input) => {
-	return postcss([styledRhythmPostcss(pluginOptions)])
+const createPostCSSConfig = (theme, input) => {
+	return postcss([styledRhythmPostcss(theme)])
 		.process(input, {
 			from: undefined,
 		})
