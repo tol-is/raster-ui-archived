@@ -1,5 +1,5 @@
 var flattenDeep = require('lodash.flattendeep');
-const { styleBaselineRel } = require('@styled-rhythm/core');
+const { styleBaselineRel } = require('@raster-ui/core');
 
 /**
  *
@@ -29,7 +29,7 @@ const createTextStyles = ({ theme, options, e, addUtilities }) => {
 									font: font,
 									root: options.root,
 									baseline: options.baseline,
-									fontSize: size,
+									size: size,
 									leading: lead,
 								}),
 							},

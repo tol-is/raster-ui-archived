@@ -1,13 +1,13 @@
 {
-	"name": "@styled-rhythm/example-postcss",
+	"name": "@raster-ui/example-postcss",
 	"private": true,
 	"version": "0.0.1",
 	"description": "",
 	"author": "Apostolos Christodoulou <me@tol.is>",
 	"license": "MIT",
 	"devDependencies": {
-		"@styled-rhythm/postcss": "^0.0.1",
-		"@styled-rhythm/theme-plex": "^0.0.1",
+		"@raster-ui/postcss": "^0.0.1",
+		"@raster-ui/theme-plex": "^0.0.1",
 		"parcel": "^1.12.4",
 		"postcss": "^7.0.26",
 		"postcss-preset-env": "^6.7.0"

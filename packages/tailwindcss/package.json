@@ -1,5 +1,5 @@
 {
-	"name": "@styled-rhythm/tailwindcss",
+	"name": "@raster-ui/tailwindcss",
 	"version": "0.0.1",
 	"author": "Apostolos Christodoulou <me@tol.is>",
 	"license": "MIT",
@@ -10,8 +10,8 @@
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"dependencies": {
-		"@styled-rhythm/core": "^0.0.1",
-		"@styled-rhythm/utils": "^0.0.1"
+		"@raster-ui/core": "^0.0.1",
+		"@raster-ui/utils": "^0.0.1"
 	},
 	"devDependencies": {
 		"parcel": "^1.12.4",

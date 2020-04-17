@@ -1,8 +1,5 @@
 import * as CSS from 'csstype';
-import {
-	StyleTypography,
-	TypographyStyleRelParams,
-} from '@styled-rhythm/types';
+import { StyleTypography, TypographyStyleRelParams } from '@raster-ui/types';
 
 /**
  *

@@ -1,4 +1,4 @@
-const { measure, measureMin, measureMax } = require('@styled-rhythm/core');
+const { measure, measureMin, measureMax } = require('@raster-ui/core');
 
 /**
  *

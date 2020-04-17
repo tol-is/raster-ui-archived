@@ -1,9 +1,9 @@
-import { Theme } from '@styled-rhythm/types';
+import { Theme } from '@raster-ui/types';
 import {
 	rhythm as rhythmFn,
 	rhythmY as rhythmYFn,
 	rhythmX as rhythmXFn,
-} from '@styled-rhythm/core';
+} from '@raster-ui/core';
 
 import replace from './lib/replace-rule';
 import getRhythm from './lib/get-rhythm';

@@ -1,7 +1,7 @@
-import { Theme } from '@styled-rhythm/types';
+import { Theme } from '@raster-ui/types';
 
-import { is, get } from '@styled-rhythm/utils';
-import { measure, measureMin, measureMax } from '@styled-rhythm/core';
+import { is, get } from '@raster-ui/utils';
+import { measure, measureMin, measureMax } from '@raster-ui/core';
 
 import replace from './lib/replace-rule';
 

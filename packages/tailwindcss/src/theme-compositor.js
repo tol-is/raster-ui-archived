@@ -1,4 +1,4 @@
-const tailwindPlugin = require('./styled-rhythm-plugin');
+const tailwindPlugin = require('./tailwind-plugin');
 
 const { baselineScaleToRem } = require('./utils/baseline-scale-to-rem');
 

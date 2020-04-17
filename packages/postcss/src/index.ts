@@ -1,14 +1,14 @@
 import postcss from 'postcss';
-import { Theme } from '@styled-rhythm/types';
+import { Theme } from '@raster-ui/types';
 
 import type from './typography';
 import rhythm from './rhythm';
 import measure from './measure';
-import matrix from './matrix';
+import raster from './raster';
 
-const plugins = [type, rhythm, measure, matrix];
+const plugins = [type, rhythm, measure, raster];
 
-const rhythmPlugin = postcss.plugin('styled-rhythm', (theme: Theme) => {
+const rhythmPlugin = postcss.plugin('raster-ui', (theme: Theme) => {
 	return (css, result) => {
 		plugins.forEach(plugin => {
 			plugin(css, theme, result);

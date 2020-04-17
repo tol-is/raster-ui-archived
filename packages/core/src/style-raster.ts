@@ -1,6 +1,10 @@
-import { Style } from '@styled-rhythm/types';
+import { Style } from '@raster-ui/types';
 
-export const matrix = ({ columns }: { columns: number }): Style => {
+
+
+
+
+export const gridRaster = ({ columns }: { columns: number }): Style => {
 	return {
 		display: 'grid',
 		gridTemplateColumns: `repeat(${columns}, minmax(0,1fr))`,
@@ -10,7 +14,7 @@ export const matrix = ({ columns }: { columns: number }): Style => {
 	};
 };
 
-export const cell = ({
+export const gridCell = ({
 	start,
 	span = 1,
 }: {
@@ -26,20 +30,20 @@ export const cell = ({
 		  };
 };
 
-export const matrixGap = ({ space }: { space: string }): Style => {
+export const gridGap = ({ space }: { space: string }): Style => {
 	return {
 		gridRowGap: space,
 		gridColumnGap: space,
 	};
 };
 
-export const matrixGapX = ({ space }: { space: string }): Style => {
+export const gridGapX = ({ space }: { space: string }): Style => {
 	return {
 		gridColumnGap: space,
 	};
 };
 
-export const matrixGapY = ({ space }: { space: string }): Style => {
+export const gridGapY = ({ space }: { space: string }): Style => {
 	return {
 		gridRowGap: space,
 	};

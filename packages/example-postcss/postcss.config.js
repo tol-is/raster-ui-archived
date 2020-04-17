@@ -1,5 +1,5 @@
-const { default: styledRhythm } = require('@styled-rhythm/postcss');
-const themePlex = require('@styled-rhythm/theme-plex');
+const { default: styledRhythm } = require('@raster-ui/postcss');
+const themePlex = require('@raster-ui/theme-plex');
 
 module.exports = {
 	plugins: [

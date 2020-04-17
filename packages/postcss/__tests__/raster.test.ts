@@ -3,14 +3,14 @@ import { matcher } from './lib/jester';
 /**
  *
  */
-test('matrix', () => {
+test('raster', () => {
 	const input = `
-	.matrix {
-		matrix: 2;
+	.raster {
+		raster: 2;
 	}`;
 
 	const result = `
-	.matrix {
+	.raster {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0,1fr));
 		& > *  {
@@ -51,14 +51,14 @@ test('cell-only-span', () => {
 	matcher(input, result);
 });
 
-test('matrix-gap', () => {
+test('raster-gap', () => {
 	const input = `
-		.matrix {
-			matrix-gap: 2;
+		.raster {
+			raster-gap: 2;
 		}`;
 
 	const result = `
-		.matrix {
+		.raster {
 			grid-row-gap: 2rem;
 			grid-column-gap: 2rem;
 		}`;
@@ -66,14 +66,14 @@ test('matrix-gap', () => {
 	matcher(input, result);
 });
 
-test('matrix-gap-custom', () => {
+test('raster-gap-custom', () => {
 	const input = `
-		.matrix {
-			matrix-gap: 23px;
+		.raster {
+			raster-gap: 23px;
 		}`;
 
 	const result = `
-		.matrix {
+		.raster {
 			grid-row-gap: 23px;
 			grid-column-gap: 23px;
 		}`;
@@ -81,28 +81,28 @@ test('matrix-gap-custom', () => {
 	matcher(input, result);
 });
 
-test('matrix-gap-x', () => {
+test('raster-gap-x', () => {
 	const input = `
-	.matrix {
-		matrix-gap-x: 2;
+	.raster {
+		raster-gap-x: 2;
 	}`;
 
 	const result = `
-		.matrix {
+		.raster {
 			grid-column-gap: 2rem;
 		}`;
 
 	matcher(input, result);
 });
 
-test('matrix-gap-y', () => {
+test('raster-gap-y', () => {
 	const input = `
-	.matrix {
-		matrix-gap-y: 2;
+	.raster {
+		raster-gap-y: 2;
 	}`;
 
 	const result = `
-		.matrix {
+		.raster {
 			grid-row-gap: 2rem;
 		}`;
 

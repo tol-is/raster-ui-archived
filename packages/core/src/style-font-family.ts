@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { FontOpenType } from '@styled-rhythm/types';
+import { FontOpenType } from '@raster-ui/types';
 
 type TypeStyleFontFamilyParams = {
 	font: FontOpenType;

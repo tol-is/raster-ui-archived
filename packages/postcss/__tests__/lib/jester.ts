@@ -1,5 +1,5 @@
-import theme from '@styled-rhythm/theme-test';
-import { stripcss } from '@styled-rhythm/utils';
+import theme from '@raster-ui/theme-test';
+import { stripcss } from '@raster-ui/utils';
 
 import postcss from 'postcss';
 import styledRhythmPostcss from '../../src';

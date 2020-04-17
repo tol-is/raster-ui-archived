@@ -2,10 +2,10 @@ import {
 	styleFontFamily,
 	styleBaselineRel,
 	styleBaseline,
-} from '@styled-rhythm/core';
+} from '@raster-ui/core';
 
-import { Theme } from '@styled-rhythm/types';
-import { is } from '@styled-rhythm/utils';
+import { Theme } from '@raster-ui/types';
+import { is } from '@raster-ui/utils';
 import replace from './lib/replace-rule';
 
 export const typePlugin = (css: any, theme: Theme, result: any) => {

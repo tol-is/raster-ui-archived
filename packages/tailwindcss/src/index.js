@@ -1,5 +1,5 @@
-const styledRhythmPlugin = require('./styled-rhythm-plugin');
-const themeCompositor = require('./theme-compositor');
+const plugin = require('./tailwind-plugin');
+const compositor = require('./theme-compositor');
 
-exports.themeCompositor = themeCompositor;
-exports.styledRhythmPlugin = styledRhythmPlugin;
+exports.compositor = compositor;
+exports.plugin = plugin;
