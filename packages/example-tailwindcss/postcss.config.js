@@ -4,12 +4,6 @@ const themePlex = require('@raster-system/theme-plex');
 
 const baseTailwindConfig = {
 	theme: {
-		screens: {
-			sm: '32rem',
-			md: '60rem',
-			lg: '80rem',
-			xl: '105rem',
-		},
 		colors: {
 			mono: [
 				'#FFFFFF',

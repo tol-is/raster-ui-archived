@@ -1,6 +1,13 @@
 const root = 16;
 const baseline = 8;
 
+const screens = {
+	sm: '32rem',
+	md: '60rem',
+	lg: '80rem',
+	xl: '105rem',
+};
+
 // type scale in px
 const type = [
 	14,
@@ -159,11 +166,13 @@ const fonts = [
 
 module.exports = {
 	relative: true,
+	screens,
 	baseline,
 	root,
 	type,
 	rhythm,
 	measure,
 	leading,
+	matrixSize,
 	fonts,
 };

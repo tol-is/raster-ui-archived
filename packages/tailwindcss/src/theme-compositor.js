@@ -13,7 +13,7 @@ const createConfig = tailwindConfig => rhythmConfig => {
 		extend = {},
 		...tailwindRest
 	} = tailwindConfig;
-	const { relative, root, baseline, rhythm } = rhythmConfig;
+	const { relative, screens, root, baseline, rhythm } = rhythmConfig;
 
 	// override spacing scale
 	// - rhythm is described in baseline units
@@ -33,6 +33,7 @@ const createConfig = tailwindConfig => rhythmConfig => {
 	// spread spacing to tailwind theme
 	const tailwindTheme = {
 		...theme,
+		...screens,
 		...rhythmConfig,
 		spacing: spacingScale,
 		extend: {
