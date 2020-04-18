@@ -1,11 +1,11 @@
 {
 	"name": "@raster-system/theme-plex",
 	"version": "0.0.1",
-	"author": "Apostolos Christodoulou <me@tol.is>",
+	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
 	"main": "dist/index.js",
 	"scripts": {
-		"start": "node ../../scripts/parcel-start.js",
+		"develop": "node ../../scripts/parcel-start.js",
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"devDependencies": {

@@ -15,7 +15,7 @@
 		"grid",
 		"rhythm"
 	],
-	"author": "tol.is",
+	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"main": "index.js",
 	"scripts": {
 		"postinstall": "lerna bootstrap",
@@ -23,8 +23,9 @@
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"docs": "npm-run-all --parallel common:dev docs:dev",
 		"postcss": "npm-run-all --parallel common:dev postcss:dev test example:postcss:dev",
-		"tailwind": "npm-run-all --parallel common:dev tailwind:dev example:tailwind:dev",
+		"tailwind": "npm-run-all --parallel themes:dev common:dev tailwind:dev example:tailwind:dev",
 		"common:dev": "npm-run-all --parallel types:dev core:dev utils:dev",
+		"themes:dev": "npm-run-all --parallel theme:plex:dev && theme:test:dev",
 		"core:dev": "lerna exec --scope @raster-system/core -- yarn develop",
 		"docs:dev": "lerna exec --scope @raster-system/docs -- yarn start",
 		"utils:dev": "lerna exec --scope @raster-system/utils -- yarn develop",
@@ -34,8 +35,8 @@
 		"tailwind:dev": "lerna exec --scope @raster-system/tailwindcss -- yarn develop",
 		"example:postcss:dev": "lerna exec --scope @raster-system/example-postcss -- yarn develop",
 		"example:tailwind:dev": "lerna exec --scope @raster-system/example-tailwindcss -- yarn develop",
-		"theme:plex:dev": "lerna exec --scope @raster-system/theme-plex -- yarn build",
-		"theme:test:dev": "lerna exec --scope @raster-system/theme-test -- yarn build"
+		"theme:plex:dev": "lerna exec --scope @raster-system/theme-plex -- yarn develop",
+		"theme:test:dev": "lerna exec --scope @raster-system/theme-test -- yarn develop"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",

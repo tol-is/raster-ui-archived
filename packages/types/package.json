@@ -1,7 +1,7 @@
 {
 	"name": "@raster-system/types",
 	"version": "0.0.1",
-	"author": "Apostolos Christodoulou <me@tol.is>",
+	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
 	"main": "dist/index.js",
 	"module": "dist/index.es.js",
