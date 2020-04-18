@@ -33,20 +33,11 @@ export interface FontOpenType {
 
 export type FontsScale = Array<FontOpenType>;
 
-export interface ThemeConfig {
-	root: number;
-	baseline: number;
-	type: NumberScale;
-	measure: NumberScale;
-	rhythm: NumberScale;
-	leading: NumberScale;
-	fonts: FontsScale;
-}
-
 export interface Theme {
 	relative: boolean;
 	root: number;
 	baseline: number;
+	matrixSize: number;
 	type: NumberScale;
 	measure: NumberScale;
 	rhythm: ObjectOrArray<number | string>;

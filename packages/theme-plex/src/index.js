@@ -55,6 +55,8 @@ const measure = ['auto', 12, 16, 20, 24, 28, 36, 44, 52, 60, 68, 84];
 // leading scale in baseline units
 const leading = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+const matrixSize = 24;
+
 // font config
 const fonts = [
 	{

@@ -3,14 +3,14 @@ import { matcher } from './lib/jester';
 /**
  *
  */
-test('raster', () => {
+test('matrix', () => {
 	const input = `
-	.raster {
-		raster: 2;
+	.grid {
+		matrix: 2;
 	}`;
 
 	const result = `
-	.raster {
+	.grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0,1fr));
 		& > *  {
@@ -26,12 +26,12 @@ test('raster', () => {
  */
 test('cell', () => {
 	const input = `
-	.cell {
+	.matrix-cell {
 		cell: 1/3;
 	}`;
 
 	const result = `
-	.cell {
+	.matrix-cell {
 		grid-column: 1 / span 3;
 	}`;
 
@@ -40,11 +40,11 @@ test('cell', () => {
 
 test('cell-only-span', () => {
 	const input = `
-		.cell {
+		.matrix-cell {
 			cell: 3;
 		}`;
 	const result = `
-		.cell {
+		.grid-cell {
 			grid-column: span 3;
 		}`;
 
@@ -53,12 +53,12 @@ test('cell-only-span', () => {
 
 test('raster-gap', () => {
 	const input = `
-		.raster {
-			raster-gap: 2;
+		.grid {
+			matrix-gap: 2;
 		}`;
 
 	const result = `
-		.raster {
+		.grid {
 			grid-row-gap: 2rem;
 			grid-column-gap: 2rem;
 		}`;
@@ -68,12 +68,12 @@ test('raster-gap', () => {
 
 test('raster-gap-custom', () => {
 	const input = `
-		.raster {
-			raster-gap: 23px;
+		.grid {
+			matrix-gap: 23px;
 		}`;
 
 	const result = `
-		.raster {
+		.grid {
 			grid-row-gap: 23px;
 			grid-column-gap: 23px;
 		}`;
@@ -83,12 +83,12 @@ test('raster-gap-custom', () => {
 
 test('raster-gap-x', () => {
 	const input = `
-	.raster {
-		raster-gap-x: 2;
+	.grid {
+		matrix-gap-x: 2;
 	}`;
 
 	const result = `
-		.raster {
+		.grid {
 			grid-column-gap: 2rem;
 		}`;
 
@@ -97,12 +97,12 @@ test('raster-gap-x', () => {
 
 test('raster-gap-y', () => {
 	const input = `
-	.raster {
-		raster-gap-y: 2;
+	.grid {
+		matrix-gap-y: 2;
 	}`;
 
 	const result = `
-		.raster {
+		.grid {
 			grid-row-gap: 2rem;
 		}`;
 

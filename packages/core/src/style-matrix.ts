@@ -1,10 +1,6 @@
 import { Style } from '@raster-ui/types';
 
-
-
-
-
-export const gridRaster = ({ columns }: { columns: number }): Style => {
+export const gridMatrix = ({ columns }: { columns: number }): Style => {
 	return {
 		display: 'grid',
 		gridTemplateColumns: `repeat(${columns}, minmax(0,1fr))`,
@@ -14,7 +10,7 @@ export const gridRaster = ({ columns }: { columns: number }): Style => {
 	};
 };
 
-export const gridCell = ({
+export const gridMatrixCell = ({
 	start,
 	span = 1,
 }: {
@@ -30,20 +26,20 @@ export const gridCell = ({
 		  };
 };
 
-export const gridGap = ({ space }: { space: string }): Style => {
+export const gridMatrixGap = ({ space }: { space: string }): Style => {
 	return {
 		gridRowGap: space,
 		gridColumnGap: space,
 	};
 };
 
-export const gridGapX = ({ space }: { space: string }): Style => {
+export const gridMatrixGapX = ({ space }: { space: string }): Style => {
 	return {
 		gridColumnGap: space,
 	};
 };
 
-export const gridGapY = ({ space }: { space: string }): Style => {
+export const gridMatrixGapY = ({ space }: { space: string }): Style => {
 	return {
 		gridRowGap: space,
 	};

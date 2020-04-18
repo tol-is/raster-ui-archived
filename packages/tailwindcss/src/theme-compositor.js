@@ -1,10 +1,15 @@
 const tailwindPlugin = require('./tailwind-plugin');
 
-const { baselineScaleToRem } = require('./utils/baseline-scale-to-rem');
+const { baselineScaleToRem } = require('@raster-ui/utils');
 
 const createConfig = tailwindConfig => rhythmConfig => {
 	// tailwind config values
-	const { theme = {}, plugins = [], extend = {}, ...tailwindRest } = tailwindConfig;
+	const {
+		theme = {},
+		plugins = [],
+		extend = {},
+		...tailwindRest
+	} = tailwindConfig;
 	const { root, baseline, rhythm } = rhythmConfig;
 
 	// override spacing scale
@@ -13,7 +18,12 @@ const createConfig = tailwindConfig => rhythmConfig => {
 	const spacingScale = baselineScaleToRem(baseline)(root)(rhythm);
 
 	// use spacing in height and min/max height
-	const { height = {}, minHeight = {}, maxHeight = {}, ...tailwindExtend } = extend;
+	const {
+		height = {},
+		minHeight = {},
+		maxHeight = {},
+		...tailwindExtend
+	} = extend;
 
 	// spread spacing to tailwind theme
 	const tailwindTheme = {

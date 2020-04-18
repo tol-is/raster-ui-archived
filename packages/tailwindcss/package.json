@@ -10,8 +10,8 @@
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"dependencies": {
-		"@raster-ui/core": "^0.0.1",
-		"@raster-ui/utils": "^0.0.1"
+		"@raster-ui/core": "*",
+		"@raster-ui/utils": "*"
 	},
 	"devDependencies": {
 		"parcel": "^1.12.4",

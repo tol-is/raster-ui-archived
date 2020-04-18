@@ -5,14 +5,14 @@ import { ThemeContext as EmotionContext } from '@emotion/core';
 
 import themeDark from './presets/duotoneDark';
 
-const StyledRhythmTheme = {
+const RasterTheme = {
 	type: [14, 16, 18, 20, 22, 24],
 	rhythm: [1, 2, 3, 4, 6, 8, 10, 12, 16, 20],
 };
 
 const CodeBlockProvider = ({ code, language, children }) => {
 	return (
-		<EmotionContext.Provider value={StyledRhythmTheme}>
+		<EmotionContext.Provider value={RasterTheme}>
 			<LiveProvider
 				language={language}
 				theme={themeDark}

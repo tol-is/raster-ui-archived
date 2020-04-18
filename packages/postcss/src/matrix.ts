@@ -1,16 +1,15 @@
 import { Theme } from '@raster-ui/types';
 import { get, is, pxToRem } from '@raster-ui/utils';
 import {
-	gridRaster,
-	gridCell,
-	gridGap,
-	gridGapX,
-	gridGapY,
+	gridMatrix,
+	gridMatrixCell,
+	gridMatrixGap,
+	gridMatrixGapX,
+	gridMatrixGapY,
 } from '@raster-ui/core';
 
 import replace from './lib/replace-rule';
 import getRhythm from './lib/get-rhythm';
-
 
 export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 	//
@@ -19,12 +18,12 @@ export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 	css.walkDecls(decl => {
 		const { prop, value } = decl;
 
-		if (prop === 'grid-raster') {
-			replace(decl, gridRaster({ columns: value }));
+		if (prop === 'matrix') {
+			replace(decl, gridMatrix({ columns: value }));
 			return;
 		}
 
-		if (prop === 'grid-cell') {
+		if (prop === 'matrix-cell') {
 			const [first, second] = value.split('/');
 
 			let start = first;
@@ -33,22 +32,22 @@ export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 				start = undefined;
 				span = first;
 			}
-			replace(decl, gridCell({ start, span }));
+			replace(decl, gridMatrixCell({ start, span }));
 			return;
 		}
 
-		if (prop === 'grid-gap') {
-			replace(decl, gridGap({ space: getRhythmValue(value) }));
+		if (prop === 'matrix-gap') {
+			replace(decl, gridMatrixGap({ space: getRhythmValue(value) }));
 			return;
 		}
 
-		if (prop === 'grid-gap-x') {
-			replace(decl, gridGapX({ space: getRhythmValue(value) }));
+		if (prop === 'matrix-gap-x') {
+			replace(decl, gridMatrixGapX({ space: getRhythmValue(value) }));
 			return;
 		}
 
-		if (prop === 'grid-gap-y') {
-			replace(decl, gridGapY({ space: getRhythmValue(value) }));
+		if (prop === 'matrix-gap-y') {
+			replace(decl, gridMatrixGapY({ space: getRhythmValue(value) }));
 			return;
 		}
 	});

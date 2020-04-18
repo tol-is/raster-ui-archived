@@ -1,4 +1,3 @@
-import * as CSS from 'csstype';
 import { StyleTypography, TypographyStyleRelParams } from '@raster-ui/types';
 
 /**

@@ -6,8 +6,8 @@
 	"author": "Apostolos Christodoulou <me@tol.is>",
 	"license": "MIT",
 	"devDependencies": {
-		"@raster-ui/postcss": "^0.0.1",
-		"@raster-ui/theme-plex": "^0.0.1",
+		"@raster-ui/postcss": "*",
+		"@raster-ui/theme-plex": "*",
 		"parcel": "^1.12.4",
 		"postcss": "^7.0.26",
 		"postcss-preset-env": "^6.7.0"

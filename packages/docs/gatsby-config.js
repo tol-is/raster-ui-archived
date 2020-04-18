@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `Styled Rhythm Docs`,
+		title: `Raster System Docs`,
 		description: ``,
 		author: `@a7sc11u`,
 	},

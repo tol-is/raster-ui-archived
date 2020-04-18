@@ -1,23 +1,23 @@
 var flattenDeep = require('lodash.flattendeep');
 const {
-	gridRaster,
-	gridCell,
-	gridGap,
-	gridGapX,
-	gridGapY,
-}  = require('@raster-ui/core');
+	gridMatrix,
+	gridMatrixCell,
+	gridMatrixGap,
+	gridMatrixGapX,
+	gridMatrixGapY,
+} = require('@raster-ui/core');
 
 /**
  *
  *
  */
-const createRasterStyles = ({ theme, options, e, addUtilities }) => {
+const createMatrixStyles = ({ theme, options, e, addUtilities }) => {
 	const columnsScale = Array.from(new Array(24 + 1), (v, i) => i);
 
-	const gridRasterStyles = columnsScale.map(columnIndex => {
+	const gridMatrixStyles = columnsScale.map(columnIndex => {
 		const columns = columnIndex === 0 ? 1 : columnIndex;
 		return {
-			[`.${e(`raster-${columnIndex}`)}`]: gridRaster({ columns }),
+			[`.${e(`matrix-${columnIndex}`)}`]: gridMatrix({ columns }),
 		};
 	});
 
@@ -30,7 +30,9 @@ const createRasterStyles = ({ theme, options, e, addUtilities }) => {
 				const startIndexValue = startIndex === 0 ? 1 : startIndex;
 
 				return {
-					[`.${e(`cell-${startIndex}/${endIndex}`)}`]: gridCell({
+					[`.${e(
+						`matrix-cell-${startIndex}/${endIndex}`
+					)}`]: gridMatrixCell({
 						start: startIndexValue,
 						span: endIndex,
 					}),
@@ -43,15 +45,15 @@ const createRasterStyles = ({ theme, options, e, addUtilities }) => {
 	const gridGapStyles = Object.keys(rhythmScale).map(key => {
 		const space = rhythmScale[key];
 		return {
-			[`.${e(`raster-gap-${key}`)}`]: gridGap({ key, space }),
-			[`.${e(`raster-gap-y-${key}`)}`]: gridGapX({ key, space }),
-			[`.${e(`raster-gap-x-${key}`)}`]: gridGapY({ key, space }),
+			[`.${e(`matrix-gap-${key}`)}`]: gridMatrixGap({ key, space }),
+			[`.${e(`matrix-gap-y-${key}`)}`]: gridMatrixGapX({ key, space }),
+			[`.${e(`matrix-gap-x-${key}`)}`]: gridMatrixGapY({ key, space }),
 		};
 	});
 
-	addUtilities(gridRasterStyles, ['responsive']);
+	addUtilities(gridMatrixStyles, ['responsive']);
 	addUtilities(gridCellStyles, ['responsive']);
 	addUtilities(gridGapStyles, ['responsive']);
 };
 
-module.exports = createRasterStyles;
+module.exports = createMatrixStyles;
