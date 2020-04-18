@@ -1,5 +1,5 @@
 const tailwindcss = require('tailwindcss');
-const { compositor } = require('@raster-system/tailwindcss');
+const { compose } = require('@raster-system/tailwindcss');
 const themePlex = require('@raster-system/theme-plex');
 
 const baseTailwindConfig = {
@@ -22,7 +22,7 @@ const baseTailwindConfig = {
 	},
 };
 
-const tailwindConfig = compositor(baseTailwindConfig)(themePlex);
+const tailwindConfig = compose(baseTailwindConfig)(themePlex);
 
 module.exports = {
 	plugins: [tailwindcss(tailwindConfig)],

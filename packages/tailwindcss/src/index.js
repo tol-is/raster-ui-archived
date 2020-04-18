@@ -1,5 +1,5 @@
 const plugin = require('./tailwind-plugin');
-const compositor = require('./theme-compositor');
+const compose = require('./theme-compositor');
 
-exports.compositor = compositor;
+exports.compose = compose;
 exports.plugin = plugin;

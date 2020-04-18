@@ -5,7 +5,7 @@ const {
 	baselineScaleToPx,
 } = require('@raster-system/utils');
 
-const createConfig = tailwindConfig => rhythmConfig => {
+const composeConfig = tailwindConfig => rhythmConfig => {
 	// tailwind config values
 	const {
 		theme = {},
@@ -64,4 +64,4 @@ const createConfig = tailwindConfig => rhythmConfig => {
 	};
 };
 
-module.exports = createConfig;
+module.exports = composeConfig;
