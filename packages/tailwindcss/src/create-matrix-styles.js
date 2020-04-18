@@ -12,7 +12,10 @@ const {
  *
  */
 const createMatrixStyles = ({ theme, options, e, addUtilities }) => {
-	const columnsScale = Array.from(new Array(24 + 1), (v, i) => i);
+	const columnsScale = Array.from(
+		new Array(options.matrixSize + 1),
+		(v, i) => i
+	);
 
 	const gridMatrixStyles = columnsScale.map(columnIndex => {
 		const columns = columnIndex === 0 ? 1 : columnIndex;

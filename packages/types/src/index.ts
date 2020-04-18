@@ -38,6 +38,7 @@ export type FontsScale = Array<FontOpenType>;
 export interface Theme {
 	relative: boolean;
 	screens: any; //TODO
+	colors: any; // TODO
 	root: number;
 	baseline: number;
 	matrixSize: number;
