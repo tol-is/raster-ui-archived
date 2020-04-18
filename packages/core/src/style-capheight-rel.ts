@@ -1,8 +1,19 @@
+import {
+	StyleTypography,
+	TypographyStyleRelParams,
+} from '@raster-system/types';
+
 /**
  *
  *
  */
-const styleCapHeight = ({ font, baseline, size, leading = 0 }) => {
+export const styleCapHeightRel = ({
+	font,
+	baseline,
+	root,
+	size,
+	leading = 0,
+}: TypographyStyleRelParams): StyleTypography => {
 	//
 	const preventCollapse = 1;
 
@@ -43,17 +54,17 @@ const styleCapHeight = ({ font, baseline, size, leading = 0 }) => {
 		fontWeight: font.weight,
 		fontStyle: font.italic ? 'italic' : 'normal',
 		display: 'block',
-		fontSize: `${size}px`,
-		lineHeight: `${lineHeight}px`,
-		transform: `translateY(${baselineOffset}px)`,
+		fontSize: `${size / root}rem`,
+		lineHeight: `${lineHeight / size}`,
+		transform: `translateY(${baselineOffset / size}em)`,
 		paddingTop: `${preventCollapse}px`,
 		['&:before']: {
 			content: `''`,
-			marginTop: `${-(cropHeight + preventCollapse)}px`,
+			marginTop: `calc(${-(cropHeight + preventCollapse) / size}em )`,
 			display: 'block',
 			height: 0,
 		},
 	};
 };
 
-module.exports = styleCapHeight;
+export default styleCapHeightRel;

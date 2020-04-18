@@ -1,4 +1,5 @@
 export * from './baseline-scale-to-rem';
+export * from './baseline-scale-to-px';
 export * from './get';
 export * from './is';
 export * from './mem';

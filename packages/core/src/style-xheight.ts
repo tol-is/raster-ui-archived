@@ -1,8 +1,15 @@
+import { StyleTypography, TypographyStyleParams } from '@raster-system/types';
+
 /**
  *
  *
  */
-const styleXHeight = ({ font, baseline, root, size, leading = 0 }) => {
+export const styleXHeight = ({
+	font,
+	baseline,
+	size,
+	leading = 0,
+}: TypographyStyleParams): StyleTypography => {
 	//
 	const preventCollapse = 1;
 
@@ -43,15 +50,17 @@ const styleXHeight = ({ font, baseline, root, size, leading = 0 }) => {
 		fontWeight: font.weight,
 		fontStyle: font.italic ? 'italic' : 'normal',
 		display: 'block',
-		fontSize: `${size / root}rem`,
-		lineHeight: `${lineHeight / size}`,
-		transform: `translateY(${baselineOffset / size}em)`,
+		fontSize: `${size}px`,
+		lineHeight: `${lineHeight}px`,
+		transform: `translateY(${baselineOffset}px)`,
 		paddingTop: `${preventCollapse}px`,
 		['&:before']: {
 			content: `''`,
-			marginTop: `calc(${-(cropHeight + preventCollapse) / size}em )`,
+			marginTop: `${-(cropHeight + preventCollapse)}px`,
 			display: 'block',
 			height: 0,
 		},
 	};
 };
+
+export default styleXHeight;

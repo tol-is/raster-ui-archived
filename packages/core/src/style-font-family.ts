@@ -1,15 +1,7 @@
-import * as CSS from 'csstype';
-import { FontOpenType } from '@raster-system/types';
-
-type TypeStyleFontFamilyParams = {
-	font: FontOpenType;
-};
-
-type TypeStyleFontFamily = {
-	fontFamily: CSS.FontFamilyProperty;
-	fontWeight: CSS.FontWeightProperty;
-	fontStyle: CSS.FontStyleProperty;
-};
+import {
+	TypeStyleFontFamilyParams,
+	TypeStyleFontFamily,
+} from '@raster-system/types';
 
 /**
  *

@@ -49,6 +49,16 @@ export interface Style extends CSS.Properties {
 	[key: string]: any;
 }
 
+export type TypeStyleFontFamilyParams = {
+	font: FontOpenType;
+};
+
+export type TypeStyleFontFamily = {
+	fontFamily: CSS.FontFamilyProperty;
+	fontWeight: CSS.FontWeightProperty;
+	fontStyle: CSS.FontStyleProperty;
+};
+
 export type TypographyStyleRelParams = {
 	font: FontOpenType;
 	baseline: number;
