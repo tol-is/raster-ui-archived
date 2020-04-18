@@ -5,12 +5,12 @@ import { matcher } from './lib/jester';
  */
 test('matrix', () => {
 	const input = `
-	.grid {
+	.matrix {
 		matrix: 2;
 	}`;
 
 	const result = `
-	.grid {
+	.matrix {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0,1fr));
 		& > *  {
@@ -27,7 +27,7 @@ test('matrix', () => {
 test('cell', () => {
 	const input = `
 	.matrix-cell {
-		cell: 1/3;
+		matrix-cell: 1/3;
 	}`;
 
 	const result = `
@@ -41,10 +41,10 @@ test('cell', () => {
 test('cell-only-span', () => {
 	const input = `
 		.matrix-cell {
-			cell: 3;
+			matrix-cell: 3;
 		}`;
 	const result = `
-		.grid-cell {
+		.matrix-cell {
 			grid-column: span 3;
 		}`;
 
@@ -53,12 +53,12 @@ test('cell-only-span', () => {
 
 test('raster-gap', () => {
 	const input = `
-		.grid {
+		.matrix {
 			matrix-gap: 2;
 		}`;
 
 	const result = `
-		.grid {
+		.matrix {
 			grid-row-gap: 2rem;
 			grid-column-gap: 2rem;
 		}`;
@@ -68,12 +68,12 @@ test('raster-gap', () => {
 
 test('raster-gap-custom', () => {
 	const input = `
-		.grid {
+		.matrix {
 			matrix-gap: 23px;
 		}`;
 
 	const result = `
-		.grid {
+		.matrix {
 			grid-row-gap: 23px;
 			grid-column-gap: 23px;
 		}`;
@@ -83,12 +83,12 @@ test('raster-gap-custom', () => {
 
 test('raster-gap-x', () => {
 	const input = `
-	.grid {
+	.matrix {
 		matrix-gap-x: 2;
 	}`;
 
 	const result = `
-		.grid {
+		.matrix {
 			grid-column-gap: 2rem;
 		}`;
 
@@ -97,12 +97,12 @@ test('raster-gap-x', () => {
 
 test('raster-gap-y', () => {
 	const input = `
-	.grid {
+	.matrix {
 		matrix-gap-y: 2;
 	}`;
 
 	const result = `
-		.grid {
+		.matrix {
 			grid-row-gap: 2rem;
 		}`;
 

@@ -21,7 +21,7 @@ export const matcher = (input, result) =>
 
 export const logger = input =>
 	createPostCSSConfig(theme, input).then(css => {
-		console.log(css);
+		// console.log(css);
 		expect(true).toBe(true);
 	});
 

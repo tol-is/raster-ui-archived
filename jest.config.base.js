@@ -10,7 +10,7 @@ module.exports = {
 	moduleFileExtensions: ['js', 'ts', 'tsx', 'json', 'node'],
 	coveragePathIgnorePatterns: ['(tests/.*.mock).(|ts?|tsx?)$'],
 	verbose: true,
-	testPathIgnorePatterns: ['/__snapshots__/', '/.cache/', '/lib/'],
+	testPathIgnorePatterns: ['/__snapshots__/', '/.cache/', '/lib/', '/dist/'],
 	moduleNameMapper: {
 		'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|mp4|webm|wav|mp3|m4a|aac|oga)$':
 			'../../../config/jest/fileMock.js',
