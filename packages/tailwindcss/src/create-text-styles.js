@@ -1,5 +1,12 @@
 var flattenDeep = require('lodash.flattendeep');
-const { styleBaselineRel } = require('@raster-system/core');
+const {
+	styleBaselineRel,
+	styleBaseline,
+	styleCapHeightRel,
+	styleCapHeight,
+	styleXHeightRel,
+	styleXHeight,
+} = require('@raster-system/core');
 
 /**
  *
@@ -22,17 +29,65 @@ const createTextStyles = ({ theme, options, e, addUtilities }) => {
 		options.fonts.map(font =>
 			options.type.map((size, sizeIdx) => {
 				return leading.map(lead => {
+					const outputBaseline = options.relative
+						? styleBaselineRel({
+								font: font,
+								root: options.root,
+								baseline: options.baseline,
+								size: size,
+								leading: lead,
+						  })
+						: styleBaseline({
+								font: font,
+								baseline: options.baseline,
+								size: size,
+								leading: lead,
+						  });
+
+					const outputCapHeight = options.relative
+						? styleCapHeightRel({
+								font: font,
+								root: options.root,
+								baseline: options.baseline,
+								size: size,
+								leading: lead,
+						  })
+						: styleCapHeight({
+								font: font,
+								baseline: options.baseline,
+								size: size,
+								leading: lead,
+						  });
+
+					const outputXHeight = options.relative
+						? styleXHeight({
+								font: font,
+								root: options.root,
+								baseline: options.baseline,
+								size: size,
+								leading: lead,
+						  })
+						: styleXHeightRel({
+								font: font,
+								baseline: options.baseline,
+								size: size,
+								leading: lead,
+						  });
+
 					return {
 						[`.font-${font.key}`]: {
-							[`&.${e(`type-${sizeIdx}/${lead}`)}`]: {
-								...styleBaselineRel({
-									font: font,
-									root: options.root,
-									baseline: options.baseline,
-									size: size,
-									leading: lead,
-								}),
-							},
+							[`&.${e(
+								`type-${sizeIdx}/${lead}`
+							)}`]: outputBaseline,
+							[`&.${e(
+								`baseline-${sizeIdx}/${lead}`
+							)}`]: outputBaseline,
+							[`&.${e(
+								`capheight-${sizeIdx}/${lead}`
+							)}`]: outputCapHeight,
+							[`&.${e(
+								`xheight-${sizeIdx}/${lead}`
+							)}`]: outputXHeight,
 						},
 					};
 				});
