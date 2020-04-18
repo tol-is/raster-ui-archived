@@ -1,6 +1,6 @@
 const tailwindPlugin = require('./tailwind-plugin');
 
-const { baselineScaleToRem } = require('@raster-ui/utils');
+const { baselineScaleToRem } = require('@raster-system/utils');
 
 const createConfig = tailwindConfig => rhythmConfig => {
 	// tailwind config values

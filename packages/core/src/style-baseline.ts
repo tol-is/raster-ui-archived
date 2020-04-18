@@ -1,4 +1,4 @@
-import { StyleTypography, TypographyStyleParams } from '@raster-ui/types';
+import { StyleTypography, TypographyStyleParams } from '@raster-system/types';
 
 /**
  *

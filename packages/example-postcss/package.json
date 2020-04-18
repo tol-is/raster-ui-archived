@@ -1,13 +1,13 @@
 {
-	"name": "@raster-ui/example-postcss",
+	"name": "@raster-system/example-postcss",
 	"private": true,
 	"version": "0.0.1",
 	"description": "",
 	"author": "Apostolos Christodoulou <me@tol.is>",
 	"license": "MIT",
 	"devDependencies": {
-		"@raster-ui/postcss": "*",
-		"@raster-ui/theme-plex": "*",
+		"@raster-system/postcss": "*",
+		"@raster-system/theme-plex": "*",
 		"parcel": "^1.12.4",
 		"postcss": "^7.0.26",
 		"postcss-preset-env": "^6.7.0"

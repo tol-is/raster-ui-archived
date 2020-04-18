@@ -1,5 +1,5 @@
 {
-	"name": "@raster-ui/postcss",
+	"name": "@raster-system/postcss",
 	"version": "0.0.1",
 	"author": "Apostolos Christodoulou <me@tol.is>",
 	"license": "MIT",
@@ -18,10 +18,10 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.6.0",
-		"@raster-ui/types": "^0.0.1",
-		"@raster-ui/theme-test": "^0.0.1",
-		"@raster-ui/core": "^0.0.1",
-		"@raster-ui/utils": "^0.0.1",
+		"@raster-system/types": "^0.0.1",
+		"@raster-system/theme-test": "^0.0.1",
+		"@raster-system/core": "^0.0.1",
+		"@raster-system/utils": "^0.0.1",
 		"@types/jest": "^25.1.4",
 		"@types/node": "^12.0.10",
 		"babel-loader": "8.0.6",

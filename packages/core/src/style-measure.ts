@@ -1,4 +1,4 @@
-import { Style } from '@raster-ui/types';
+import { Style } from '@raster-system/types';
 
 export const measure = ({ space }: { space: string }): Style => {
 	return {

@@ -1,5 +1,5 @@
 var flattenDeep = require('lodash.flattendeep');
-const { styleBaselineRel } = require('@raster-ui/core');
+const { styleBaselineRel } = require('@raster-system/core');
 
 /**
  *

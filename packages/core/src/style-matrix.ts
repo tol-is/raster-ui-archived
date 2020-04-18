@@ -1,4 +1,4 @@
-import { Style } from '@raster-ui/types';
+import { Style } from '@raster-system/types';
 
 export const gridMatrix = ({ columns }: { columns: number }): Style => {
 	return {

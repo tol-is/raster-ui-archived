@@ -1,12 +1,12 @@
-import { Theme } from '@raster-ui/types';
-import { get, is, pxToRem } from '@raster-ui/utils';
+import { Theme } from '@raster-system/types';
+import { get, is, pxToRem } from '@raster-system/utils';
 import {
 	gridMatrix,
 	gridMatrixCell,
 	gridMatrixGap,
 	gridMatrixGapX,
 	gridMatrixGapY,
-} from '@raster-ui/core';
+} from '@raster-system/core';
 
 import replace from './lib/replace-rule';
 import getRhythm from './lib/get-rhythm';

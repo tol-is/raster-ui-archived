@@ -72,8 +72,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `styled-rhythm,`,
-				short_name: `rhythm`,
+				name: `raster-system,`,
+				short_name: `raster`,
 				start_url: `/`,
 				background_color: `#fff`,
 				theme_color: `#fff`,

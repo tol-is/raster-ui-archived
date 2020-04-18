@@ -1,11 +1,11 @@
-import { stripcss } from '@raster-ui/utils';
-import theme from '@raster-ui/theme-test';
+import { stripcss } from '@raster-system/utils';
+import theme from '@raster-system/theme-test';
 
 import postcss from 'postcss';
-import styledRhythmPostcss from '../../src';
+import rasterSystemPostcss from '../../src';
 
 const createPostCSSConfig = (theme, input) => {
-	return postcss([styledRhythmPostcss(theme)])
+	return postcss([rasterSystemPostcss(theme)])
 		.process(input, {
 			from: undefined,
 		})

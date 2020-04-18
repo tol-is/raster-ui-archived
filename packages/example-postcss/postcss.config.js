@@ -1,12 +1,12 @@
-const { default: styledRhythm } = require('@raster-ui/postcss');
-const themePlex = require('@raster-ui/theme-plex');
+const { default: rasterSystem } = require('@raster-system/postcss');
+const themePlex = require('@raster-system/theme-plex');
 
 module.exports = {
 	plugins: [
 		require('postcss-import')({
 			plugins: [require('stylelint')],
 		}),
-		styledRhythm(themePlex),
+		rasterSystem(themePlex),
 		require('postcss-preset-env')({
 			stage: 1,
 			autoprefixer: { grid: true },

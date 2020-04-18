@@ -1,4 +1,4 @@
-import { Style } from '@raster-ui/types';
+import { Style } from '@raster-system/types';
 
 export const rhythm = ({ space }: { space: string }): Style => {
 	return {

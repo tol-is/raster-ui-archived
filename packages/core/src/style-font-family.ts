@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { FontOpenType } from '@raster-ui/types';
+import { FontOpenType } from '@raster-system/types';
 
 type TypeStyleFontFamilyParams = {
 	font: FontOpenType;

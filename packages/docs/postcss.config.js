@@ -1,6 +1,6 @@
 const tailwindcss = require('tailwindcss');
-const { themeCompositor } = require('@raster-ui/tailwindcss');
-const themePlex = require('@raster-ui/theme-plex');
+const { themeCompositor } = require('@raster-system/tailwindcss');
+const themePlex = require('@raster-system/theme-plex');
 
 // const themePlex = require('./theme');
 // themePlex.fonts = {
