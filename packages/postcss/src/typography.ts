@@ -2,6 +2,10 @@ import {
 	styleFontFamily,
 	styleBaselineRel,
 	styleBaseline,
+	styleXHeightRel,
+	styleCapHeightRel,
+	styleCapHeight,
+	styleXHeight,
 } from '@raster-system/core';
 
 import { Theme } from '@raster-system/types';
@@ -28,30 +32,81 @@ export const typePlugin = (css: any, theme: Theme, result: any) => {
 
 			const [size, leading = 0] = fontSize.split('/');
 
-			if (relative && format === 'baseline') {
-				replace(
-					decl,
-					styleBaselineRel({
-						font,
-						size,
-						leading,
-						baseline,
-						root,
-					})
-				);
+			if (format === 'baseline') {
+				if (relative) {
+					replace(
+						decl,
+						styleBaselineRel({
+							font,
+							size,
+							leading,
+							baseline,
+							root,
+						})
+					);
+				} else {
+					replace(
+						decl,
+						styleBaseline({
+							font,
+							leading,
+							baseline,
+							size,
+						})
+					);
+				}
 				return;
 			}
 
-			if (!relative && format === 'baseline') {
-				replace(
-					decl,
-					styleBaseline({
-						font,
-						leading,
-						baseline,
-						size,
-					})
-				);
+			if (format === 'capheight') {
+				if (relative) {
+					replace(
+						decl,
+						styleCapHeightRel({
+							font,
+							size,
+							leading,
+							baseline,
+							root,
+						})
+					);
+				} else {
+					replace(
+						decl,
+						styleCapHeight({
+							font,
+							leading,
+							baseline,
+							size,
+						})
+					);
+				}
+				return;
+			}
+
+			if (format === 'xheight') {
+				if (relative) {
+					replace(
+						decl,
+						styleXHeightRel({
+							font,
+							size,
+							leading,
+							baseline,
+							root,
+						})
+					);
+				} else {
+					replace(
+						decl,
+						styleXHeight({
+							font,
+							leading,
+							baseline,
+							size,
+						})
+					);
+				}
 				return;
 			}
 		}

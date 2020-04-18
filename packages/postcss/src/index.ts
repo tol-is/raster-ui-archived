@@ -5,8 +5,9 @@ import type from './typography';
 import rhythm from './rhythm';
 import measure from './measure';
 import raster from './matrix';
+import space from './space';
 
-const plugins = [type, rhythm, measure, raster];
+const plugins = [type, rhythm, measure, raster, space];
 
 const rhythmPlugin = postcss.plugin('raster-system', (theme: Theme) => {
 	return (css, result) => {
