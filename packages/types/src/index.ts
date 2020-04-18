@@ -6,6 +6,8 @@ export type ObjectOrArray<T, K extends keyof any = keyof any> =
 
 export type NumberScale = Array<number>;
 
+export type Screens = Array<number>;
+
 export interface FontOpenType {
 	key: string;
 	familyName: string;
@@ -35,6 +37,7 @@ export type FontsScale = Array<FontOpenType>;
 
 export interface Theme {
 	relative: boolean;
+	screens: any; //TODO
 	root: number;
 	baseline: number;
 	matrixSize: number;
