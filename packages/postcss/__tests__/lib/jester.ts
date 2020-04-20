@@ -10,6 +10,7 @@ const createPostCSSConfig = (theme, input) => {
 			from: undefined,
 		})
 		.then(({ css }) => {
+			console.log(css);
 			return css;
 		});
 };

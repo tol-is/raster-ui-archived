@@ -15,7 +15,7 @@ export const getRhythmValue = theme => key => {
 		? is.exists(relative)
 			? `${toRootEm(scaleValue * baseline)}rem`
 			: `${scaleValue * baseline}px`
-		: get(theme, key, key);
+		: get(theme, key, key); // why did i do this?
 
 	return styleValue;
 };

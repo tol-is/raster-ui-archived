@@ -9,7 +9,7 @@ import {
 } from '@raster-system/core';
 
 import { Theme } from '@raster-system/types';
-import { is } from '@raster-system/utils';
+import { is, get } from '@raster-system/utils';
 import replace from './lib/replace-rule';
 
 export const typePlugin = (css: any, theme: Theme, result: any) => {
@@ -21,16 +21,18 @@ export const typePlugin = (css: any, theme: Theme, result: any) => {
 		// const sizeRegEx = RegExp('^[0-9]+([/]?[0-9]+)?$', 'g');
 
 		if (prop === 'font') {
-			const [family, fontSize, format = 'baseline'] = value.split(' ');
+			const [family, type, format = 'baseline'] = value.split(' ');
 
 			const font = fonts.find(f => f.key === family);
 
-			if (!is.exists(fontSize)) {
+			if (!is.exists(type)) {
 				replace(decl, styleFontFamily({ font }));
 				return;
 			}
 
-			const [size, leading = 0] = fontSize.split('/');
+			const [fontSize, leading = 0] = type.split('/');
+
+			const size = get(theme.type, fontSize, fontSize);
 
 			if (format === 'baseline') {
 				if (relative) {

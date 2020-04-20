@@ -22,7 +22,7 @@
 		"start": "npm-run-all --parallel common:dev postcss:dev test",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"docs": "npm-run-all --parallel common:dev docs:dev",
-		"postcss": "npm-run-all --parallel common:dev postcss:dev test example:postcss:dev",
+		"postcss": "npm-run-all --parallel common:dev postcss:dev example:postcss:dev test",
 		"tailwind": "npm-run-all --parallel themes:dev common:dev tailwind:dev example:tailwind:dev",
 		"common:dev": "npm-run-all --parallel types:dev core:dev utils:dev",
 		"themes:dev": "npm-run-all --parallel theme:plex:dev && theme:test:dev",

@@ -2,5 +2,13 @@
 	"extends": "stylelint-config-standard",
 	"rules": {
     "indentation": ["tab"],
+    "font-family-no-missing-generic-family-keyword": [ true, {
+      "ignoreValues": [
+        "sans-400",
+        "sans-400i",
+        "sans-700",
+        "sans-700i"
+      ]
+    }]
   }
 }

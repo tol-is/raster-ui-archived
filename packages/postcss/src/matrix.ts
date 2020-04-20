@@ -2,6 +2,8 @@ import { Theme } from '@raster-system/types';
 import { get, is, pxToRem } from '@raster-system/utils';
 import {
 	gridMatrix,
+	gridMatrixColumns,
+	gridMatrixRows,
 	gridMatrixCell,
 	gridMatrixGap,
 	gridMatrixGapX,
@@ -19,7 +21,48 @@ export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 		const { prop, value } = decl;
 
 		if (prop === 'matrix') {
-			replace(decl, gridMatrix({ columns: value }));
+			const [xParams = '', yParams = ''] = value.split(' ');
+
+			const [columns, gapX = false] = xParams
+				.split('/')
+				.map(v => parseInt(v));
+
+			const [rhythm = false, gapY = false] = yParams
+				.split('/')
+				.map(v => parseInt(v));
+
+			const styleParams: any = {};
+
+			console.log(value);
+
+			if (is.num(columns)) {
+				styleParams.columns = columns;
+			}
+			if (is.num(columns)) {
+				styleParams.rhythm = getRhythmValue(rhythm);
+			}
+			if (is.num(gapX)) {
+				styleParams.gapX = getRhythmValue(gapX);
+			}
+			if (is.num(gapY)) {
+				styleParams.gapY = getRhythmValue(gapY);
+			}
+
+			replace(decl, gridMatrix(styleParams));
+			return;
+		}
+
+		if (prop === 'matrix-columns') {
+			replace(decl, gridMatrixColumns({ columns: value }));
+			return;
+		}
+
+		if (prop === 'matrix-rows') {
+			const rhythmValue = getRhythmValue(value);
+
+			console.log(value, rhythmValue);
+
+			replace(decl, gridMatrixRows({ rhythm: rhythmValue }));
 			return;
 		}
 

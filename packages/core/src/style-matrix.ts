@@ -1,13 +1,45 @@
 import { Style } from '@raster-system/types';
 
-export const gridMatrix = ({ columns }: { columns: number }): Style => {
-	return {
+export const gridMatrix = ({
+	columns,
+	rhythm,
+	gapX,
+	gapY,
+}: {
+	columns: number;
+	rhythm: string;
+	gapX: string;
+	gapY: string;
+}): Style => {
+	const result = {
+		...(columns && gridMatrixColumns({ columns })),
+		...(rhythm && gridMatrixRows({ rhythm: rhythm })),
+		...(gapX && gridMatrixGapX({ space: gapX })),
+		...(gapY && gridMatrixGapY({ space: gapY })),
+	};
+
+	return result;
+};
+
+export const gridMatrixColumns = ({ columns }: { columns: number }): Style => {
+	const result: Style = {
 		display: 'grid',
 		gridTemplateColumns: `repeat(${columns}, minmax(0,1fr))`,
+
 		[`& > * `]: {
 			gridColumn: 'span 1',
 		},
 	};
+
+	return result;
+};
+
+export const gridMatrixRows = ({ rhythm }: { rhythm?: string }): Style => {
+	const result: Style = {
+		gridAutoRows: `minmax(${rhythm}, auto);`,
+	};
+
+	return result;
 };
 
 export const gridMatrixCell = ({
@@ -18,9 +50,13 @@ export const gridMatrixCell = ({
 	span: number;
 }): Style => {
 	return start
-		? {
-				gridColumn: `${start} / span ${span}`,
-		  }
+		? span >= 0
+			? {
+					gridColumn: `${start} / span ${span}`,
+			  }
+			: {
+					gridColumn: `${start} / ${span}`,
+			  }
 		: {
 				gridColumn: `span ${span}`,
 		  };

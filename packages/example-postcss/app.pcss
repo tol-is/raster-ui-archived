@@ -1,10 +1,29 @@
 @custom-media --viewport-medium (width >= 50rem);
 
 @import './reset.pcss';
-
+/* 
 .article-content {
 	rhythm: 2;
 	@media (--viewport-medium) {
 		rhythm: 3;
 	}
+} */
+
+article {
+	color: red;
+	matrix-columns: 7;
+	matrix-rows: 14;
+	matrix-gap: 3;
+}
+
+header {
+	matrix-cell: 1/-1;
+}
+
+.heading-1 {
+	font: sans-400 19/3;
+}
+
+.copy {
+	font: sans-400 5/3;
 }

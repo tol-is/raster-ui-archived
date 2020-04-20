@@ -12,3 +12,5 @@ export * from './style-capheight-rel';
 
 export * from './style-xheight';
 export * from './style-xheight-rel';
+
+export * from './style-background';
