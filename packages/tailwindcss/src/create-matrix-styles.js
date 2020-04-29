@@ -1,6 +1,8 @@
 var flattenDeep = require('lodash.flattendeep');
 const {
 	gridMatrix,
+	gridMatrixColumns,
+	gridMatrixRows,
 	gridMatrixCell,
 	gridMatrixGap,
 	gridMatrixGapX,
@@ -17,11 +19,26 @@ const createMatrixStyles = ({ theme, options, e, addUtilities }) => {
 		(v, i) => i
 	);
 
-	const gridMatrixStyles = columnsScale.map(columnIndex => {
+	const rhythmScale = theme('spacing');
+
+	const gridMatrixColumnsStyles = columnsScale.map(columnIndex => {
 		const columns = columnIndex === 0 ? 1 : columnIndex;
+
 		return {
-			[`.${e(`matrix-${columnIndex}`)}`]: gridMatrix({ columns }),
+			[`.${e(`matrix-${columnIndex}`)}`]: gridMatrixColumns({
+				columns,
+			}),
 		};
+	});
+
+	const gridMatrixRowsStyles = Object.keys(rhythmScale).map(key => {
+		const space = rhythmScale[key];
+		return {
+			[`.${e(`matrix-rows-${key}`)}`]: gridMatrixRows({
+				rhythm: space,
+			}),
+		};
+		// return {};
 	});
 
 	const gridCellStyles = flattenDeep(
@@ -44,17 +61,17 @@ const createMatrixStyles = ({ theme, options, e, addUtilities }) => {
 		})
 	).filter(Boolean);
 
-	const rhythmScale = theme('spacing');
 	const gridGapStyles = Object.keys(rhythmScale).map(key => {
 		const space = rhythmScale[key];
 		return {
 			[`.${e(`matrix-gap-${key}`)}`]: gridMatrixGap({ key, space }),
-			[`.${e(`matrix-gap-y-${key}`)}`]: gridMatrixGapX({ key, space }),
-			[`.${e(`matrix-gap-x-${key}`)}`]: gridMatrixGapY({ key, space }),
+			[`.${e(`matrix-gap-x-${key}`)}`]: gridMatrixGapX({ key, space }),
+			[`.${e(`matrix-gap-y-${key}`)}`]: gridMatrixGapY({ key, space }),
 		};
 	});
 
-	addUtilities(gridMatrixStyles, ['responsive']);
+	addUtilities(gridMatrixColumnsStyles, ['responsive']);
+	addUtilities(gridMatrixRowsStyles, ['responsive']);
 	addUtilities(gridCellStyles, ['responsive']);
 	addUtilities(gridGapStyles, ['responsive']);
 };

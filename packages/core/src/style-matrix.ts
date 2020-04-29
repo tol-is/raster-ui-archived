@@ -36,7 +36,7 @@ export const gridMatrixColumns = ({ columns }: { columns: number }): Style => {
 
 export const gridMatrixRows = ({ rhythm }: { rhythm?: string }): Style => {
 	const result: Style = {
-		gridAutoRows: `minmax(${rhythm}, auto);`,
+		gridAutoRows: `minmax(${rhythm}, auto)`,
 	};
 
 	return result;
