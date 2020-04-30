@@ -1,5 +1,5 @@
 import { Theme } from '@raster-ui/types';
-import { get, is, pxToRem } from '@raster-ui/utils';
+import { get, is, pxToRem, getRhythm } from '@raster-ui/utils';
 import {
 	gridMatrix,
 	gridMatrixColumns,
@@ -10,8 +10,13 @@ import {
 	gridMatrixGapY,
 } from '@raster-ui/core';
 
+// 12/3 cols/gap
+
+// 12 3/4 cols gap/gap
+
+// 12/3 5/3
+
 import replace from './lib/replace-rule';
-import getRhythm from './lib/get-rhythm';
 
 export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 	//
@@ -23,28 +28,28 @@ export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 		if (prop === 'matrix') {
 			const [xParams = '', yParams = ''] = value.split(' ');
 
-			const [columns, gapX = false] = xParams
-				.split('/')
-				.map(v => parseInt(v));
+			const [columns, gapX] = xParams.split('/').map(v => parseInt(v));
 
-			const [rhythm = false, gapY = false] = yParams
-				.split('/')
-				.map(v => parseInt(v));
+			let [rhythm, gapY] = yParams.split('/').map(v => parseInt(v));
+
+			// if
+			if (is.exists(rhythm) && !is.exists(gapY)) {
+				gapY = rhythm;
+				rhythm = null;
+			}
 
 			const styleParams: any = {};
 
-			console.log(value);
-
-			if (is.num(columns)) {
+			if (is.exists(columns)) {
 				styleParams.columns = columns;
 			}
-			if (is.num(columns)) {
+			if (is.exists(rhythm)) {
 				styleParams.rhythm = getRhythmValue(rhythm);
 			}
-			if (is.num(gapX)) {
+			if (is.exists(gapX)) {
 				styleParams.gapX = getRhythmValue(gapX);
 			}
-			if (is.num(gapY)) {
+			if (is.exists(gapY)) {
 				styleParams.gapY = getRhythmValue(gapY);
 			}
 
@@ -57,10 +62,8 @@ export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 			return;
 		}
 
-		if (prop === 'matrix-rows') {
+		if (prop === 'matrix-row-height') {
 			const rhythmValue = getRhythmValue(value);
-
-			console.log(value, rhythmValue);
 
 			replace(decl, gridMatrixRows({ rhythm: rhythmValue }));
 			return;

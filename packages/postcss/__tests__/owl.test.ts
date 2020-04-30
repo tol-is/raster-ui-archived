@@ -6,7 +6,7 @@ import { matcher } from './lib/jester';
 test('rhythm', () => {
 	const input = `
 	.stack {
-		rhythm: 2;
+		owl: 2;
 	}`;
 
 	const result = `
@@ -25,7 +25,7 @@ test('rhythm', () => {
 test('rhythm-custom', () => {
 	const input = `
 	.stack {
-		rhythm: 24px;
+		owl: 24px;
 	}`;
 
 	const result = `
@@ -44,7 +44,7 @@ test('rhythm-custom', () => {
 test('rhythm-x', () => {
 	const input = `
 	.row {
-		rhythm-x: 2;
+		owl-x: 2;
 	}`;
 
 	const result = `
@@ -63,7 +63,7 @@ test('rhythm-x', () => {
 test('rhythm-y', () => {
 	const input = `
 	.stack {
-		rhythm-y: 2;
+		owl-y: 2;
 	}`;
 
 	const result = `

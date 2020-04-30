@@ -1,5 +1,5 @@
 export * from './style-measure';
-export * from './style-rhythm';
+export * from './style-owl';
 export * from './style-matrix';
 
 export * from './style-font-family';

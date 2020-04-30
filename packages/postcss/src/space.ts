@@ -1,9 +1,15 @@
 import { Theme } from '@raster-ui/types';
+import { getRhythm } from '@raster-ui/utils';
 
 import replace from './lib/replace-rule';
-import getRhythm from './lib/get-rhythm';
 
 const spaceProps = [
+	'height',
+	'min-height',
+	'max-height',
+	'width',
+	'min-width',
+	'max-width',
 	'margin',
 	'padding',
 	'margin-top',
@@ -20,7 +26,7 @@ const spaceProps = [
 	'padding-y',
 ];
 
-export const rasterPlugin = (css: any, theme: Theme, result: any) => {
+export const spacePlugin = (css: any, theme: Theme, result: any) => {
 	//
 	const getRhythmValue = getRhythm(theme);
 
@@ -34,11 +40,11 @@ export const rasterPlugin = (css: any, theme: Theme, result: any) => {
 				.join(' ');
 
 			replace(decl, {
-				[prop]: getRhythmValue(cssValue),
+				[prop]: cssValue,
 			});
 			return;
 		}
 	});
 };
 
-export default rasterPlugin;
+export default spacePlugin;

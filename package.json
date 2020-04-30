@@ -25,17 +25,17 @@
 		"tailwind": "npm-run-all --parallel themes:dev common:dev tailwind:dev example:tailwind:dev",
 		"common:dev": "npm-run-all --parallel types:dev core:dev utils:dev",
 		"themes:dev": "npm-run-all --parallel theme:plex:dev && theme:test:dev",
-		"core:dev": "lerna exec --scope @raster-ui/core -- yarn develop",
-		"docs:dev": "lerna exec --scope @raster-ui/docs -- yarn start",
-		"utils:dev": "lerna exec --scope @raster-ui/utils -- yarn develop",
-		"scales:dev": "lerna exec --scope @raster-ui/scales -- yarn develop",
-		"types:dev": "lerna exec --scope @raster-ui/types -- yarn develop",
-		"postcss:dev": "lerna exec --scope @raster-ui/postcss -- yarn develop",
-		"tailwind:dev": "lerna exec --scope @raster-ui/tailwindcss -- yarn develop",
-		"example:postcss:dev": "lerna exec --scope @raster-ui/example-postcss -- yarn develop",
-		"example:tailwind:dev": "lerna exec --scope @raster-ui/example-tailwindcss -- yarn develop",
-		"theme:plex:dev": "lerna exec --scope @raster-ui/theme-plex -- yarn develop",
-		"theme:test:dev": "lerna exec --scope @raster-ui/theme-test -- yarn develop"
+		"core:dev": "yarn workspace @raster-ui/core develop",
+		"docs:dev": "yarn workspace @raster-ui/docs develop",
+		"utils:dev": "yarn workspace @raster-ui/utils develop",
+		"scales:dev": "yarn workspace @raster-ui/scales develop",
+		"types:dev": "yarn workspace @raster-ui/types develop",
+		"postcss:dev": "yarn workspace @raster-ui/postcss develop",
+		"tailwind:dev": "yarn workspace @raster-ui/tailwindcss develop",
+		"example:postcss:dev": "yarn workspace @raster-ui/example-postcss develop",
+		"example:tailwind:dev": "yarn workspace @raster-ui/example-tailwindcss develop",
+		"theme:plex:dev": "yarn workspace @raster-ui/theme-plex develop",
+		"theme:test:dev": "yarn workspace @raster-ui/theme-test develop"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",
@@ -58,7 +58,6 @@
 		"react-test-renderer": "^16.9.0",
 		"ts-jest": "^24.1.0"
 	},
-	"license": "MIT",
 	"dependencies": {
 		"npm-run-all": "^4.1.5"
 	}

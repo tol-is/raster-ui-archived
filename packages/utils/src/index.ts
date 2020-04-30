@@ -8,3 +8,4 @@ export * from './px-scale-to-rem';
 export * from './px-to-rem';
 export * from './uuid';
 export * from './strip-css';
+export * from './get-rhythm';

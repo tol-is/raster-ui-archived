@@ -1,7 +1,11 @@
-import { is, get, pxToRem } from '@raster-ui/utils';
+import { Theme } from '@raster-ui/types';
+
+import { is } from './is';
+import { get } from './get';
+import { pxToRem } from './px-to-rem';
 
 //
-export const getRhythmValue = theme => key => {
+export const getRhythm = (theme: Theme) => key => {
 	//
 	const { relative, root, baseline } = theme;
 	const toRootEm = pxToRem(root);
@@ -10,14 +14,16 @@ export const getRhythmValue = theme => key => {
 	const scaleValue = get(theme.rhythm, key, key);
 
 	// if it's just a number, transform to px or rem if relative
-	// else try to get a theme value
+
 	const styleValue = is.num(scaleValue)
 		? is.exists(relative)
 			? `${toRootEm(scaleValue * baseline)}rem`
 			: `${scaleValue * baseline}px`
-		: get(theme, key, key); // why did i do this?
+		: // else try to get a theme value
+		  // get will return the key as is if not found
+		  get(theme, key, key);
 
 	return styleValue;
 };
 
-export default getRhythmValue;
+export default getRhythm;

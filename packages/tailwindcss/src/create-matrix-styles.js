@@ -34,7 +34,7 @@ const createMatrixStyles = ({ theme, options, e, addUtilities }) => {
 	const gridMatrixRowsStyles = Object.keys(rhythmScale).map(key => {
 		const space = rhythmScale[key];
 		return {
-			[`.${e(`matrix-rows-${key}`)}`]: gridMatrixRows({
+			[`.${e(`matrix-rhythm-${key}`)}`]: gridMatrixRows({
 				rhythm: space,
 			}),
 		};
