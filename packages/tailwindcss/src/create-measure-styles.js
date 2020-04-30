@@ -1,4 +1,4 @@
-const { measure, measureMin, measureMax } = require('@raster-system/core');
+const { measure, measureMin, measureMax } = require('@raster-ui/core');
 
 /**
  *

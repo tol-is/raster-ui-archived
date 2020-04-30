@@ -6,7 +6,7 @@ const {
 	styleCapHeight,
 	styleXHeightRel,
 	styleXHeight,
-} = require('@raster-system/core');
+} = require('@raster-ui/core');
 
 /**
  *

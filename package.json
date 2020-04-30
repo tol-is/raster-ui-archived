@@ -1,11 +1,10 @@
 {
-	"name": "raster-system",
+	"name": "raster-ui",
 	"private": true,
-	"workspaces": {
-		"packages": [
-			"packages/*"
-		]
-	},
+	"workspaces": [
+		"packages/*",
+		"examples/*"
+	],
 	"version": "0.0.1",
 	"description": "",
 	"keywords": [
@@ -26,17 +25,17 @@
 		"tailwind": "npm-run-all --parallel themes:dev common:dev tailwind:dev example:tailwind:dev",
 		"common:dev": "npm-run-all --parallel types:dev core:dev utils:dev",
 		"themes:dev": "npm-run-all --parallel theme:plex:dev && theme:test:dev",
-		"core:dev": "lerna exec --scope @raster-system/core -- yarn develop",
-		"docs:dev": "lerna exec --scope @raster-system/docs -- yarn start",
-		"utils:dev": "lerna exec --scope @raster-system/utils -- yarn develop",
-		"scales:dev": "lerna exec --scope @raster-system/scales -- yarn develop",
-		"types:dev": "lerna exec --scope @raster-system/types -- yarn develop",
-		"postcss:dev": "lerna exec --scope @raster-system/postcss -- yarn develop",
-		"tailwind:dev": "lerna exec --scope @raster-system/tailwindcss -- yarn develop",
-		"example:postcss:dev": "lerna exec --scope @raster-system/example-postcss -- yarn develop",
-		"example:tailwind:dev": "lerna exec --scope @raster-system/example-tailwindcss -- yarn develop",
-		"theme:plex:dev": "lerna exec --scope @raster-system/theme-plex -- yarn develop",
-		"theme:test:dev": "lerna exec --scope @raster-system/theme-test -- yarn develop"
+		"core:dev": "lerna exec --scope @raster-ui/core -- yarn develop",
+		"docs:dev": "lerna exec --scope @raster-ui/docs -- yarn start",
+		"utils:dev": "lerna exec --scope @raster-ui/utils -- yarn develop",
+		"scales:dev": "lerna exec --scope @raster-ui/scales -- yarn develop",
+		"types:dev": "lerna exec --scope @raster-ui/types -- yarn develop",
+		"postcss:dev": "lerna exec --scope @raster-ui/postcss -- yarn develop",
+		"tailwind:dev": "lerna exec --scope @raster-ui/tailwindcss -- yarn develop",
+		"example:postcss:dev": "lerna exec --scope @raster-ui/example-postcss -- yarn develop",
+		"example:tailwind:dev": "lerna exec --scope @raster-ui/example-tailwindcss -- yarn develop",
+		"theme:plex:dev": "lerna exec --scope @raster-ui/theme-plex -- yarn develop",
+		"theme:test:dev": "lerna exec --scope @raster-ui/theme-test -- yarn develop"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",

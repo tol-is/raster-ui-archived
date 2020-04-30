@@ -1,4 +1,4 @@
-import { Theme } from '@raster-system/types';
+import { Theme } from '@raster-ui/types';
 
 import replace from './lib/replace-rule';
 import getRhythm from './lib/get-rhythm';

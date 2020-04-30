@@ -72,7 +72,7 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `raster-system,`,
+				name: `raster-ui,`,
 				short_name: `raster`,
 				start_url: `/`,
 				background_color: `#fff`,

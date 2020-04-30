@@ -1,5 +1,5 @@
-const { default: rasterSystem } = require('@raster-system/postcss');
-const themePlex = require('@raster-system/theme-plex');
+const { default: rasterSystem } = require('@raster-ui/postcss');
+const themePlex = require('@raster-ui/theme-plex');
 
 module.exports = {
 	plugins: [

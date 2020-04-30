@@ -6,10 +6,10 @@ import {
 	styleCapHeightRel,
 	styleCapHeight,
 	styleXHeight,
-} from '@raster-system/core';
+} from '@raster-ui/core';
 
-import { Theme } from '@raster-system/types';
-import { is, get } from '@raster-system/utils';
+import { Theme } from '@raster-ui/types';
+import { is, get } from '@raster-ui/utils';
 import replace from './lib/replace-rule';
 
 export const typePlugin = (css: any, theme: Theme, result: any) => {

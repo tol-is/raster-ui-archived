@@ -1,5 +1,5 @@
-import { Theme } from '@raster-system/types';
-import { get, is, pxToRem } from '@raster-system/utils';
+import { Theme } from '@raster-ui/types';
+import { get, is, pxToRem } from '@raster-ui/utils';
 import {
 	gridMatrix,
 	gridMatrixColumns,
@@ -8,7 +8,7 @@ import {
 	gridMatrixGap,
 	gridMatrixGapX,
 	gridMatrixGapY,
-} from '@raster-system/core';
+} from '@raster-ui/core';
 
 import replace from './lib/replace-rule';
 import getRhythm from './lib/get-rhythm';

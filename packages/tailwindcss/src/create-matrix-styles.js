@@ -7,7 +7,7 @@ const {
 	gridMatrixGap,
 	gridMatrixGapX,
 	gridMatrixGapY,
-} = require('@raster-system/core');
+} = require('@raster-ui/core');
 
 /**
  *

@@ -1,4 +1,4 @@
-import { is, get, pxToRem } from '@raster-system/utils';
+import { is, get, pxToRem } from '@raster-ui/utils';
 
 //
 export const getRhythmValue = theme => key => {

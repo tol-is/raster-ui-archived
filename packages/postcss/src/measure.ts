@@ -1,7 +1,7 @@
-import { Theme } from '@raster-system/types';
+import { Theme } from '@raster-ui/types';
 
-import { is, get } from '@raster-system/utils';
-import { measure, measureMin, measureMax } from '@raster-system/core';
+import { is, get } from '@raster-ui/utils';
+import { measure, measureMin, measureMax } from '@raster-ui/core';
 
 import replace from './lib/replace-rule';
 

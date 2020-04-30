@@ -1,4 +1,4 @@
-const { rhythm, rhythmY, rhythmX } = require('@raster-system/core');
+const { rhythm, rhythmY, rhythmX } = require('@raster-ui/core');
 
 /**
  *

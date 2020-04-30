@@ -1,7 +1,7 @@
 import {
 	TypeStyleFontFamilyParams,
 	TypeStyleFontFamily,
-} from '@raster-system/types';
+} from '@raster-ui/types';
 
 /**
  *

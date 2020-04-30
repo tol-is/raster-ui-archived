@@ -1,5 +1,5 @@
 {
-	"name": "@raster-system/tailwindcss",
+	"name": "@raster-ui/tailwindcss",
 	"version": "0.0.1",
 	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
@@ -10,8 +10,8 @@
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"dependencies": {
-		"@raster-system/core": "*",
-		"@raster-system/utils": "*"
+		"@raster-ui/core": "*",
+		"@raster-ui/utils": "*"
 	},
 	"devDependencies": {
 		"parcel": "^1.12.4",

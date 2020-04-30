@@ -1,5 +1,5 @@
-import { stripcss } from '@raster-system/utils';
-import theme from '@raster-system/theme-test';
+import { stripcss } from '@raster-ui/utils';
+import theme from '@raster-ui/theme-test';
 
 import postcss from 'postcss';
 import rasterSystemPostcss from '../../src';
