@@ -21,8 +21,8 @@
 		"start": "npm-run-all --parallel common:dev postcss:dev test",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"docs": "npm-run-all --parallel common:dev docs:dev",
-		"postcss": "npm-run-all --parallel common:dev postcss:dev example:postcss:dev test",
-		"tailwind": "npm-run-all --parallel themes:dev common:dev tailwind:dev example:tailwind:dev",
+		"postcss": "npm-run-all --parallel common:dev postcss:dev demo:postcss:dev test",
+		"tailwind": "npm-run-all --parallel common:dev tailwind:dev demo:tailwind:dev",
 		"common:dev": "npm-run-all --parallel types:dev core:dev utils:dev",
 		"themes:dev": "npm-run-all --parallel theme:plex:dev && theme:test:dev",
 		"core:dev": "yarn workspace @raster-ui/core develop",
@@ -32,10 +32,10 @@
 		"types:dev": "yarn workspace @raster-ui/types develop",
 		"postcss:dev": "yarn workspace @raster-ui/postcss develop",
 		"tailwind:dev": "yarn workspace @raster-ui/tailwindcss develop",
-		"example:postcss:dev": "yarn workspace @raster-ui/example-postcss develop",
-		"example:tailwind:dev": "yarn workspace @raster-ui/example-tailwindcss develop",
 		"theme:plex:dev": "yarn workspace @raster-ui/theme-plex develop",
-		"theme:test:dev": "yarn workspace @raster-ui/theme-test develop"
+		"theme:test:dev": "yarn workspace @raster-ui/theme-test develop",
+		"demo:postcss:dev": "yarn workspace demo-postcss develop",
+		"demo:tailwind:dev": "yarn workspace demo-tailwindcss develop"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",
