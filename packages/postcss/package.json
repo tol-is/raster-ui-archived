@@ -3,25 +3,27 @@
 	"version": "0.0.4-alpha.0",
 	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
-	"main": "dist/index.js",
-	"module": "dist/index.es.js",
-	"files": [
-		"dist"
-	],
-	"types": "dist/index.d.ts",
 	"publishConfig": {
 		"access": "public"
 	},
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "rollup -c",
 		"develop": "rollup -cw"
 	},
+	"dependencies": {
+		"@raster-ui/core": "^0.0.1",
+		"@raster-ui/types": "^0.0.1",
+		"@raster-ui/utils": "^0.0.1"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.6.0",
-		"@raster-ui/core": "^0.0.1",
 		"@raster-ui/theme-test": "^0.0.1",
-		"@raster-ui/types": "^0.0.1",
-		"@raster-ui/utils": "^0.0.1",
 		"@types/jest": "^25.1.4",
 		"@types/node": "^12.0.10",
 		"babel-loader": "8.0.6",
