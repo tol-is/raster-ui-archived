@@ -4,6 +4,7 @@
     "indentation": ["tab"],
     "font-family-no-missing-generic-family-keyword": [ true, {
       "ignoreValues": [
+        "sans,
         "sans-400",
         "sans-400i",
         "sans-700",

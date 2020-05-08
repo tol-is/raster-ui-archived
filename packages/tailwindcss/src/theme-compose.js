@@ -10,7 +10,14 @@ const composeConfig = tailwindConfig => rhythmConfig => {
 		extend = {},
 		...tailwindRest
 	} = tailwindConfig;
-	const { relative, screens, colors, root, baseline, rhythm } = rhythmConfig;
+	const {
+		relative,
+		breakpoints,
+		colors,
+		root,
+		baseline,
+		rhythm,
+	} = rhythmConfig;
 
 	// override spacing scale
 	// - rhythm is described in baseline units
@@ -27,11 +34,16 @@ const composeConfig = tailwindConfig => rhythmConfig => {
 		...tailwindExtend
 	} = extend;
 
+	const screens = breakpoints.reduce((res, { key, width }) => {
+		res[key] = width;
+		return res;
+	}, {});
+
 	// spread spacing to tailwind theme
 	const tailwindTheme = {
 		...theme,
-		...screens,
-		...colors,
+		screens: screens,
+		colors,
 		...rhythmConfig,
 		spacing: spacingScale,
 		extend: {

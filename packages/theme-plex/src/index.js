@@ -1,12 +1,12 @@
 const root = 16;
 const baseline = 8;
 
-const screens = {
-	sm: '32rem',
-	md: '60rem',
-	lg: '80rem',
-	xl: '105rem',
-};
+const breakpoints = [
+	{ key: 'sm', width: '32rem' },
+	{ key: 'md', width: '60rem' },
+	{ key: 'lg', width: '80rem' },
+	{ key: 'xl', width: '105rem' },
+];
 
 // type scale in px
 const type = [
@@ -54,10 +54,9 @@ const rhythm = [
 	48,
 	56,
 ];
-rhythm.px = '1px';
 
 // measure scale in characters unit
-const measure = ['auto', 12, 16, 20, 24, 28, 36, 44, 52, 60, 68, 84];
+const measure = [12, 16, 20, 24, 28, 36, 44, 52, 60, 68, 84];
 
 // leading scale in baseline units
 const leading = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -134,7 +133,7 @@ const colors = {
 
 module.exports = {
 	relative: true,
-	screens,
+	breakpoints,
 	colors,
 	baseline,
 	root,

@@ -22,7 +22,7 @@ export const owlPlugin = (css: any, theme: Theme) => {
 		}
 
 		if (prop === 'owl-y') {
-			replace(decl, owlX({ space: getRhythmValue(value) }));
+			replace(decl, owlY({ space: getRhythmValue(value) }));
 			return;
 		}
 	});

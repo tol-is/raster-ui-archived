@@ -6,7 +6,12 @@ export type ObjectOrArray<T, K extends keyof any = keyof any> =
 
 export type NumberScale = Array<number>;
 
-export type Screens = Array<number>;
+export type Breakpoints = Array<Breakpoint>;
+
+export type Breakpoint = {
+	key: string;
+	width: number | string;
+};
 
 export interface FontOpenType {
 	key: string;
@@ -37,7 +42,7 @@ export type FontsScale = Array<FontOpenType>;
 
 export interface Theme {
 	relative: boolean;
-	screens: any; //TODO
+	breakpoints: Breakpoints;
 	colors: any; // TODO
 	root: number;
 	baseline: number;

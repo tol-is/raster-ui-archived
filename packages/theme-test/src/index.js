@@ -1,12 +1,12 @@
 const root = 8;
 const baseline = 8;
 
-const screens = {
-	sm: '32rem',
-	md: '60rem',
-	lg: '80rem',
-	xl: '105rem',
-};
+const breakpoints = [
+	{ key: 'sm', width: '32rem' },
+	{ key: 'md', width: '60rem' },
+	{ key: 'lg', width: '80rem' },
+	{ key: 'xl', width: '105rem' },
+];
 
 // type scale in px
 const type = [10, 20, 30, 40, 50];
@@ -55,7 +55,7 @@ const colors = {
 module.exports = {
 	relative: true,
 	colors,
-	screens,
+	breakpoints,
 	baseline,
 	root,
 	type,

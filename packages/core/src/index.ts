@@ -14,3 +14,5 @@ export * from './style-xheight';
 export * from './style-xheight-rel';
 
 export * from './style-background';
+
+export * from './style-reset';

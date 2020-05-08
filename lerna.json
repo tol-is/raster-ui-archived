@@ -3,5 +3,6 @@
 	"packages": ["packages/*"],
 	"version": "independent",
 	"npmClient": "yarn",
+	"licence": "MIT",
 	"useWorkspaces": true
 }
