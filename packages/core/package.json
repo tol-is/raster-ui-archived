@@ -27,5 +27,6 @@
 	},
 	"dependencies": {
 		"csstype": "^2.6.9"
-	}
+	},
+	"gitHead": "d89132ef09fe08cd8a37454a108457e422917752"
 }

@@ -17,5 +17,6 @@
 		"lodash.flattendeep": "^4.4.0",
 		"parcel": "^1.12.4",
 		"parcel-bundler": "^1.12.4"
-	}
+	},
+	"gitHead": "d89132ef09fe08cd8a37454a108457e422917752"
 }
