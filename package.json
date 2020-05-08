@@ -52,7 +52,7 @@
 		"themes:build": "npm-run-all theme:plex:dev theme:test:build scales:build",
 		"theme:plex:build": "yarn workspace @raster-ui/theme-plex build",
 		"theme:test:build": "yarn workspace @raster-ui/theme-test build",
-		"release": "yarn test:prod && yarn core:build && yarn web:build && lerna publish"
+		"release": "lerna publish"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",
