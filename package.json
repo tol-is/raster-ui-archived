@@ -1,6 +1,9 @@
 {
 	"name": "raster-ui",
 	"private": true,
+	"publishConfig": {
+		"access": "public"
+	},
 	"workspaces": [
 		"packages/*",
 		"examples/*"
