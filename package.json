@@ -25,7 +25,7 @@
 	"scripts": {
 		"postinstall": "lerna bootstrap",
 		"start": "npm-run-all --parallel common:dev postcss:dev test",
-		"build": "npm-run-all common:build plugins:build scales:build themes:build",
+		"build": "npm-run-all common:build plugins:build",
 		"test": "jest --watch --onlyChanged --watchman --forceExit --detectOpenHandles --notify --notifyMode=failure",
 		"docs": "npm-run-all --parallel common:dev docs:dev",
 		"postcss": "npm-run-all --parallel common:dev postcss:dev demo:postcss:dev",
@@ -48,11 +48,11 @@
 		"core:build": "yarn workspace @raster-ui/core build",
 		"utils:build": "yarn workspace @raster-ui/utils build",
 		"docs:build": "yarn workspace @raster-ui/docs build",
-		"plugins:build": "npm-run-all postcss:build tailwind:build",
+		"plugins:build": "npm-run-all postcss:build tailwind:build scales:build themes:build",
 		"scales:build": "yarn workspace @raster-ui/scales build",
 		"postcss:build": "yarn workspace @raster-ui/postcss build",
 		"tailwind:build": "yarn workspace @raster-ui/tailwindcss build",
-		"themes:build": "npm-run-all theme:plex:dev theme:test:build scales:build",
+		"themes:build": "npm-run-all theme:plex:dev",
 		"theme:plex:build": "yarn workspace @raster-ui/theme-plex build",
 		"theme:test:build": "yarn workspace @raster-ui/theme-test build",
 		"release": "lerna publish"

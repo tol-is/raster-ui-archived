@@ -1,11 +1,8 @@
 {
 	"name": "@raster-ui/theme-test",
-	"version": "0.0.3-alpha.0",
+	"private": true,
 	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
-	"publishConfig": {
-		"access": "public"
-	},
 	"main": "dist/index.js",
 	"scripts": {
 		"develop": "node ../../scripts/parcel-start.js",
