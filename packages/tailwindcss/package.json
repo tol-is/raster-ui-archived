@@ -1,6 +1,6 @@
 {
 	"name": "@raster-ui/tailwindcss",
-	"version": "0.0.3-alpha.0",
+	"version": "0.0.4-alpha.0",
 	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
 	"publishConfig": {
@@ -13,8 +13,8 @@
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"dependencies": {
-		"@raster-ui/core": "^0.0.3-alpha.0",
-		"@raster-ui/utils": "^0.0.3-alpha.0"
+		"@raster-ui/core": "^0.0.4-alpha.0",
+		"@raster-ui/utils": "^0.0.4-alpha.0"
 	},
 	"devDependencies": {
 		"lodash.flattendeep": "^4.4.0",
