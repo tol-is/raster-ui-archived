@@ -43,10 +43,6 @@ const fonts = [
 	},
 ];
 
-const colors = {
-	mono: ['#000000', '#FFFFFF'],
-};
-
 module.exports = {
 	relative: true,
 	colors,
