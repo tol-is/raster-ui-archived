@@ -16,7 +16,7 @@ export const getRhythm = (theme: Theme) => key => {
 	// if it's just a number, transform to px or rem if relative
 
 	const styleValue = is.num(scaleValue)
-		? is.exists(relative)
+		? is.truthy(relative)
 			? `${toRootEm(scaleValue * baseline)}rem`
 			: `${scaleValue * baseline}px`
 		: // else try to get a theme value
