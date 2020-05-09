@@ -5,7 +5,7 @@ import postcss from 'postcss';
 import rasterSystemPostcss from '../../src';
 
 const createPostCSSConfig = (theme, input) => {
-	return postcss([rasterSystemPostcss(theme)])
+	return postcss([rasterSystemPostcss(theme, { useRem: true })])
 		.process(input, {
 			from: undefined,
 		})

@@ -41,7 +41,7 @@ export interface FontOpenType {
 export type FontsScale = Array<FontOpenType>;
 
 export interface Theme {
-	relative: boolean;
+	useRem: boolean;
 	breakpoints: Breakpoints;
 	colors: any; // TODO
 	root: number;

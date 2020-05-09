@@ -1,10 +1,10 @@
 const { bgBaselineRel, bgBaseline } = require('@raster-ui/core');
 
 const createBackgroundStyles = ({ theme, options, e, addUtilities }) => {
-	const { baseline, root, relative } = options;
+	const { baseline, root, useRem } = options;
 
 	const baselineBgStyles = {
-		[`.bg-baseline`]: relative
+		[`.bg-baseline`]: useRem
 			? bgBaselineRel({ baseline, root })
 			: bgBaseline({ baseline }),
 	};

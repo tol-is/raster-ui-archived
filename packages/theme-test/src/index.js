@@ -44,7 +44,7 @@ const fonts = [
 ];
 
 module.exports = {
-	relative: true,
+	useRem: true,
 	colors,
 	breakpoints,
 	baseline,

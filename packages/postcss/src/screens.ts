@@ -2,7 +2,7 @@ import { Theme } from '@raster-ui/types';
 import { is, get, pxToRem } from '@raster-ui/utils';
 
 export const screensPlugin = (css: any, theme: Theme, result: any) => {
-	const { root, relative, breakpoints } = theme;
+	const { root, useRem, breakpoints } = theme;
 
 	const toRem = pxToRem(root);
 
@@ -16,9 +16,7 @@ export const screensPlugin = (css: any, theme: Theme, result: any) => {
 		}
 		atRule.name = 'media';
 		atRule.params = `(min-width: ${
-			relative
-				? `${toRem(themeScreen.width)}rem`
-				: `${themeScreen.width}px`
+			useRem ? `${toRem(themeScreen.width)}rem` : `${themeScreen.width}px`
 		})`;
 	});
 };

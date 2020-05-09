@@ -13,7 +13,7 @@ import { is, get } from '@raster-ui/utils';
 import replace from './lib/replace-rule';
 
 export const typePlugin = (css: any, theme: Theme, result: any) => {
-	const { relative, baseline, root, fonts } = theme;
+	const { useRem, baseline, root, fonts } = theme;
 	css.walkDecls(decl => {
 		const { prop, value } = decl;
 
@@ -35,7 +35,7 @@ export const typePlugin = (css: any, theme: Theme, result: any) => {
 			const size = get(theme.type, fontSize, fontSize);
 
 			if (format === 'baseline') {
-				if (relative) {
+				if (useRem) {
 					replace(
 						decl,
 						styleBaselineRel({
@@ -61,7 +61,7 @@ export const typePlugin = (css: any, theme: Theme, result: any) => {
 			}
 
 			if (format === 'capheight') {
-				if (relative) {
+				if (useRem) {
 					replace(
 						decl,
 						styleCapHeightRel({
@@ -87,7 +87,7 @@ export const typePlugin = (css: any, theme: Theme, result: any) => {
 			}
 
 			if (format === 'xheight') {
-				if (relative) {
+				if (useRem) {
 					replace(
 						decl,
 						styleXHeightRel({

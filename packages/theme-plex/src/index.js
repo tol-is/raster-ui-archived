@@ -133,7 +133,7 @@ const colors = {
 };
 
 module.exports = {
-	relative: true,
+	useRem: true,
 	breakpoints,
 	colors,
 	baseline,

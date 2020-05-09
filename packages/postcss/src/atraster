@@ -3,7 +3,7 @@ import { bgBaselineRel, bgBaseline, reset } from '@raster-ui/core';
 import replace from './lib/replace-rule';
 
 export const atRaster = (css: any, theme: Theme, result: any) => {
-	const { relative, baseline, root } = theme;
+	const { useRem, baseline, root } = theme;
 
 	css.walkAtRules('raster', atRule => {
 		atRule.before(reset);

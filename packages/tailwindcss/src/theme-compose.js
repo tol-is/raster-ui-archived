@@ -11,7 +11,7 @@ const composeConfig = tailwindConfig => rhythmConfig => {
 		...tailwindRest
 	} = tailwindConfig;
 	const {
-		relative,
+		useRem,
 		breakpoints,
 		colors,
 		root,
@@ -22,7 +22,7 @@ const composeConfig = tailwindConfig => rhythmConfig => {
 	// override spacing scale
 	// - rhythm is described in baseline units
 	// - convert rhythm scale to rem
-	const spacingScale = relative
+	const spacingScale = useRem
 		? baselineScaleToRem(baseline)(root)(rhythm)
 		: baselineScaleToPx(baseline)(rhythm);
 

@@ -29,7 +29,7 @@ const createTextStyles = ({ theme, options, e, addUtilities }) => {
 		options.fonts.map(font =>
 			options.type.map((size, sizeIdx) => {
 				return leading.map(lead => {
-					const outputBaseline = options.relative
+					const outputBaseline = options.useRem
 						? styleBaselineRel({
 								font: font,
 								root: options.root,
@@ -44,7 +44,7 @@ const createTextStyles = ({ theme, options, e, addUtilities }) => {
 								leading: lead,
 						  });
 
-					const outputCapHeight = options.relative
+					const outputCapHeight = options.useRem
 						? styleCapHeightRel({
 								font: font,
 								root: options.root,
@@ -59,7 +59,7 @@ const createTextStyles = ({ theme, options, e, addUtilities }) => {
 								leading: lead,
 						  });
 
-					const outputXHeight = options.relative
+					const outputXHeight = options.useRem
 						? styleXHeight({
 								font: font,
 								root: options.root,

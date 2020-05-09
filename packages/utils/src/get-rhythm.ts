@@ -7,16 +7,16 @@ import { pxToRem } from './px-to-rem';
 //
 export const getRhythm = (theme: Theme) => key => {
 	//
-	const { relative, root, baseline } = theme;
+	const { useRem, root, baseline } = theme;
 	const toRootEm = pxToRem(root);
 
 	//
 	const scaleValue = get(theme.rhythm, key, key);
 
-	// if it's just a number, transform to px or rem if relative
+	// if it's just a number, transform to px or rem if useRem
 
 	const styleValue = is.num(scaleValue)
-		? is.truthy(relative)
+		? is.truthy(useRem)
 			? `${toRootEm(scaleValue * baseline)}rem`
 			: `${scaleValue * baseline}px`
 		: // else try to get a theme value
