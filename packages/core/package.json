@@ -1,6 +1,6 @@
 {
 	"name": "@raster-ui/core",
-	"version": "0.0.5-alpha.0",
+	"version": "0.0.8-alpha.1",
 	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
 	"main": "dist/index.js",
@@ -17,7 +17,6 @@
 		"develop": "rollup -cw"
 	},
 	"devDependencies": {
-		"@raster-ui/types": "*",
 		"@babel/core": "^7.6.0",
 		"@raster-ui/types": "*",
 		"@types/node": "^12.0.10",
