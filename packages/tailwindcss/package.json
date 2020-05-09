@@ -13,8 +13,8 @@
 		"build": "node ../../scripts/parcel-build.js"
 	},
 	"dependencies": {
-		"@raster-ui/core": "^0.0.4-alpha.0",
-		"@raster-ui/utils": "^0.0.5-alpha.0"
+		"@raster-ui/core": "*",
+		"@raster-ui/utils": "*"
 	},
 	"devDependencies": {
 		"lodash.flattendeep": "^4.4.0",

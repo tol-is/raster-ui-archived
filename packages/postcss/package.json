@@ -17,13 +17,13 @@
 		"develop": "rollup -cw"
 	},
 	"dependencies": {
-		"@raster-ui/core": "^0.0.1",
-		"@raster-ui/utils": "^0.0.1"
+		"@raster-ui/core": "*",
+		"@raster-ui/utils": "*"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.6.0",
-		"@raster-ui/theme-test": "^0.0.1",
-		"@raster-ui/types": "^0.0.1",
+		"@raster-ui/theme-test": "*",
+		"@raster-ui/types": "*",
 		"@types/jest": "^25.1.4",
 		"@types/node": "^12.0.10",
 		"babel-loader": "8.0.6",
