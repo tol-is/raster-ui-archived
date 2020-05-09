@@ -10,7 +10,7 @@ export type Breakpoints = Array<Breakpoint>;
 
 export type Breakpoint = {
 	key: string;
-	width: number | string;
+	width: number;
 };
 
 export interface FontOpenType {

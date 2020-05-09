@@ -1,8 +1,10 @@
 import { Theme } from '@raster-ui/types';
-import { is, get } from '@raster-ui/utils';
+import { is, get, pxToRem } from '@raster-ui/utils';
 
 export const screensPlugin = (css: any, theme: Theme, result: any) => {
-	const { breakpoints } = theme;
+	const { root, relative, breakpoints } = theme;
+
+	const toRem = pxToRem(root);
 
 	css.walkAtRules('screen', atRule => {
 		const screenKey = atRule.params;
@@ -13,7 +15,11 @@ export const screensPlugin = (css: any, theme: Theme, result: any) => {
 			throw atRule.error(`No \`${screenKey}\` screen found.`);
 		}
 		atRule.name = 'media';
-		atRule.params = `(min-width: ${themeScreen.width})`;
+		atRule.params = `(min-width: ${
+			relative
+				? `${toRem(themeScreen.width)}rem`
+				: `${themeScreen.width}px`
+		})`;
 	});
 };
 

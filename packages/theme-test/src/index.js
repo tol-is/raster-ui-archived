@@ -1,7 +1,7 @@
 const root = 8;
 const baseline = 8;
 
-const breakpoints = [{ key: 'md', width: '60rem' }];
+const breakpoints = [{ key: 'md', width: 960 }];
 
 // type scale in px
 const type = [10, 20, 30, 40, 50];

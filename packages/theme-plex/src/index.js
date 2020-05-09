@@ -2,10 +2,11 @@ const root = 16;
 const baseline = 8;
 
 const breakpoints = [
-	{ key: 'sm', width: '32rem' },
-	{ key: 'md', width: '60rem' },
-	{ key: 'lg', width: '80rem' },
-	{ key: 'xl', width: '105rem' },
+	{ key: 'sm', width: 512 },
+	{ key: 'md', width: 960 },
+	{ key: 'lg', width: 1280 },
+	{ key: 'xl', width: 1440 },
+	{ key: 'xxl', width: 1760 },
 ];
 
 // type scale in px

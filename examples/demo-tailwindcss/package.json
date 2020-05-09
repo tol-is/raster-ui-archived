@@ -5,8 +5,8 @@
 	"author": "Apostolos Christodoulou <a7sc11u@gmail.com> (@a7sc11u)",
 	"license": "MIT",
 	"devDependencies": {
-		"@raster-ui/tailwindcss": "^0.0.1-alpha.0",
-		"@raster-ui/theme-plex": "^0.0.1-alpha.0",
+		"@raster-ui/tailwindcss": "*",
+		"@raster-ui/theme-plex": "*",
 		"parcel": "^1.12.4",
 		"postcss": "^7.0.26",
 		"tailwindcss": "^1.1.3"

@@ -55,7 +55,9 @@
 		"themes:build": "npm-run-all theme:plex:dev",
 		"theme:plex:build": "yarn workspace @raster-ui/theme-plex build",
 		"theme:test:build": "yarn workspace @raster-ui/theme-test build",
-		"release": "lerna publish"
+		"release": "lerna publish",
+		"upd": "lerna updated",
+		"boot": "lerna bootstrap"
 	},
 	"devDependencies": {
 		"@testing-library/cypress": "^5.0.1",
